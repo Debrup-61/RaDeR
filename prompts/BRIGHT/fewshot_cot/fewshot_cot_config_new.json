@@ -1,0 +1,8 @@
+{
+    "prompt_template": "You are given context about a mathematical question.  Your job is to generate the next steps of the solution and complete the solution. In the end of your response, a final answer is given in the format of  \"$\\boxed<ANSWER>$\" , where <ANSWER> should be a numeric result or a math expression.\n\n{examples}\n\nContext: {instruction}\nNext steps: ",
+    "stop_tokens": [
+        "Context",
+        "Context:"
+    ],
+    "answer_marker": "boxed"
+}

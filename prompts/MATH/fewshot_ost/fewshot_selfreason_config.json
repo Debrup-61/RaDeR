@@ -1,0 +1,8 @@
+{
+    "prompt_template": "You are given a mathematical question, an intermediate solution and a mathematical theorem which was retrieved denoted as Retrieved Document. First, please judge whether the mathematical theorem is relevant with the question and the intermediate solution, and put it in the relevant field. If the provided content is irrelevant to the question and the context, explain the reason in the relevant reason field. The format will be as follows: Question: [question]\nIntermediate solution: [intermediate solution]\nRetrieved Document: [theorem]\nRelevant: [relevance label]\nReason: [reason]. Here are some examples. \n\n{examples}\n\nQuestion: {question}",
+    "stop_tokens": [
+        "Question:",
+        "Question"
+    ],
+    "answer_marker": "boxed"
+}

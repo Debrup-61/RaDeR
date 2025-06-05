@@ -1,0 +1,29 @@
+Question: Solve the system of equations 3x + 2y = 5, x − 4y = 3.
+Retrieved Theorem: Cramer's Rule - Cramer's Rule states that for a system of linear equations Ax=b, where A is an n×n matrix with det⁡(A)≠0. the solution is given by xi=det⁡(Ai)det⁡(A)xi​=det(A)det(Ai​)​, where Ai​ is obtained by replacing the ith column of A with b.
+Remaining solution: We solve by substitution: Express x in terms of y:  x = 3 + 4y. Substitute into the first equation: 3(3+4y) + 2y = 5. Solving for y gives y = −2, and substituting back, x = −5. Thus, the solution is (−5,−2).
+Label: No
+Explanation: The retrieved theorem describes Cramer's Rule, but the solution uses substitution rather than determinants, meaning the theorem was not applied directly.
+
+Question: Find the derivative of f(x) = x^3 − 5x^2 + 7x −2 
+Retrieved Theorem: Power Rule of Differentiation - The power rule states that if f(x) = x^n, then its derivative is given by f'(x) = n x^{n-1}.
+Remaining solution: We differentiate each term separately: \frac{d}{dx} (x^3 - 5x^2 + 7x - 2) = 3x^2 - 10x + 7. Thus, the derivative is: f'(x) = 3x^2 - 10x + 7.
+Label: Yes
+Explanation: The retrieved theorem states the power rule, which is directly applied to differentiate each term in the function.
+
+Question: What is the expected value of a fair six-sided die roll?
+Retrieved Theorem: Law of Large Numbers - The Law of Large Numbers states that as the number of trials increases, the sample average of a random variable approaches its expected value.
+Remaining solution: The expected value of a fair die roll is given by: E(X) = \sum_{i=1}^{6} i \cdot P(i). Since each outcome occurs with probability \frac{1}{6}, we compute: E(X) = \frac{1}{6} (1 + 2 + 3 + 4 + 5 + 6). = \frac{1}{6} (21) = 3.5.
+Label: No
+Explanation: The Law of Large Numbers is about long-term averages but is not used to compute the expected value. Instead, the calculation was done using the definition of expectation.
+
+Question: Evaluate the limit: \lim_{x \to 0} \frac{\sin x}{x}.
+Retrieved Theorem: L'Hôpital's Rule - L'Hôpital's Rule states that if \lim_{x \to c} f(x) = 0, \quad \lim_{x \to c} g(x) = 0, and both f(x) and g(x) are differentiable near c, then \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}, provided the latter limit exists.
+Remaining solution: We use the standard trigonometric identity: \lim_{x \to 0} \frac{\sin x}{x} = 1. Thus, the limit is \boxed{1}.
+Label: No
+Explanation: The retrieved theorem (L'Hôpital's Rule) was not used in the solution. Instead, the problem was solved using a known fundamental limit in trigonometry.
+
+Question: A certain disease affects 1% of a population. A test for the disease is 95% accurate for those with the disease (true positive rate) and 90% accurate for those without it (true negative rate). If a person tests positive, what is the probability they actually have the disease?
+Retrieved Theorem: Bayes' Theorem - Bayes' Theorem states that for events A and B, P(A | B) = \frac{P(B | A) P(A)}{P(B)}.
+Remaining solution: Let D be the event of having the disease, and Pos be testing positive.  P(D | Pos) = \frac{P(Pos | D) * P(D)}{P(Pos)}. We calculate P(Pos) using the law of total probability: P(Pos) = P(Pos ∣ D) * P(D) + P(Pos ∣ D^{c}) * P(Dc). Substituting the given values: P(Pos) = (0.95×0.01) + (0.10×0.99) = 0.0095 + 0.099 = 0.1085. Now, P(D | Pos) = \frac{0.0095}{0.1085} \approx 0.0876. Thus, the probability is 8.76%.
+Label: Yes
+Explanation: The retrieved theorem (Bayes’ Theorem) is applied to compute the conditional probability.

@@ -1,0 +1,8 @@
+{
+    "prompt_template": "What are the most relevant mathematical theorems, key mathematical results, formulas and concepts that can help in solving the given mathematical question? Use relevant mathematical definitions and concepts that relate to the problem. Use fundamental mathematical ideas in the topic of the question that should underlie the solution. Here are some examples. \n\n{examples}\n\nQuestion: {question}",
+    "stop_tokens": [
+        "Question:",
+        "Question"
+    ],
+    "answer_marker": "boxed"
+}

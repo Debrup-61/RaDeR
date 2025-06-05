@@ -1,0 +1,29 @@
+Question: Let f: R → R be a continuous function such that f(0)=0 and for all x,y ∈ R f(x+y)=f(x)+f(y)+xy. Find the degree of f.
+Intermediate solution: let us define a new function g(x) such that: g(x)=f(x) − (x^2)/2.
+Retrieved Document: Cauchy’s Functional Equation - The Cauchy functional equation is the equation f(x+y) = f(x) + f(y),∀x,y∈R. If f is assumed to be continuous (or bounded on any nontrivial interval), then the only solutions are linear functions of the form: f(x)=cx, for some constant c ∈ R.
+Relevant: True
+Reason: The given functional equation can be transformed into Cauchy’s Functional Equation by defining g(x) = f(x)− (x^2)/2​, which simplifies to g(x+y)=g(x)+g(y). Since g(x) satisfies Cauchy’s equation and is given to be continuous, it must be of the form g(x) = cx for some constant c ∈ R. This leads to the general solution f(x)=(x^2)/2 + cx, which is a polynomial of degree 2. Hence, Cauchy’s Functional Equation is relevant as it helps determine the linear part of f(x) and establish its polynomial nature.
+
+Question: Let f: R → R be a differentiable function such that f′(x) = f(x) + x . Find f(x)   
+Intermediate solution: 
+Retrieved Document: Rolle’s Theorem - If a function f(x) is continuous on [a,b], differentiable on (a,b)(a,b), and satisfies f(a)=f(b), then there exists a point c ∈(a,b) such that: f′(c)=0.
+Relevant: False 
+Reason: The problem at hand involves solving a differential equation to find the function f(x), which requires techniques such as using an integrating factor, separation of variables, or other methods specific to differential equations. There is no direct application of Rolle's Theorem to the differential equation provided, as the theorem does not help in finding the solution to the equation f′(x) = f(x) + x.
+
+Question: The lifetime of a battery follows an exponential distribution with a mean of 10 hours. What is the probability that a randomly chosen battery lasts at least 15 hours?
+Intermediate solution: we can compute the probability directly using the cumulative density function (CDF) of the exponential distribution.
+Retrieved Document: Markov’s Inequality - For a non-negative random variable X: P(X ≥ a) ≤ E[X]/a.
+Relevant: False 
+Reason: Markov’s Inequality provides an upper bound on tail probabilities but does not give the exact probability for an exponential distribution. Instead, the problem should be solved using the cumulative distribution function (CDF) of an exponential distribution, making Markov’s Inequality irrelevant.
+
+Question: In a medical test for a disease, 1% of the population has the disease. The test correctly identifies a diseased person 95% of the time but also gives a false positive for 2% of healthy individuals. Given that a person tests positive, what is the probability that they actually have the disease?
+Intermediate solution: The prevalence of the disease in the population is 1% (0.01). The sensitivity of the test (the probability it correctly identifies a diseased person) is 95% (0.95). The false positive rate (the probability it incorrectly identifies a healthy person as diseased) is 2% (0.02). We want to find the probability that a person actually has the disease given that they test positive. 
+Retrieved Document: Bayes’ Theorem - Given two events A and B, P(A∣B) = (P(B∣A) * P(A))/P(B).
+Relevant: True 
+Reason: The problem requires computing a posterior probability given prior and conditional probabilities, which is the exact application of Bayes’ Theorem.
+
+Question: Find the greatest common divisor (GCD) of 18 and 24.
+Intermediate solution:
+Retrieved Document: Chinese Remainder Theorem - The Chinese Remainder Theorem helps solve systems of simultaneous congruences. Specifically, if you have two congruences: x≡a (mod m) and x≡b (modn), and m and n are coprime, then there is a unique solution modulo mn .
+Relevant: False
+Reason: The Chinese Remainder Theorem is used to solve systems of congruences, not to compute the GCD. The problem is about finding the GCD, which is best done using the Euclidean algorithm, making the Chinese Remainder Theorem irrelevant here.

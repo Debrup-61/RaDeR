@@ -1,0 +1,19 @@
+{
+    "prompt_template": "You are given a mathematical question and an intermediate solution. What are the mathematical concepts, theorems, formulas that would be useful for solving this question. Please provide the theorem name, followed by the theorem statement, followed by the preconditions in the theorem, and why the preconditions are satisfied in the question we have. Also mention which specific subjects in math this theorem corresponds to. List out as many number of theorems that are highly relevant to this question. Do not output the final solution. Do not generate theorems which are already present in the intermediate solution. \n\n{examples}\n\n\n### Question:\n{question}\n",
+    "stop_tokens": [
+        "</s>",
+        "USER:",
+        "USER",
+        "ASSISTANT:",
+        "ASSISTANT",
+        "Question:",
+        "Question",
+        "Response:",
+        "Response",
+        "#",
+        "# ",
+        "###",
+        "### "
+    ],
+    "answer_marker": "answer is"
+}

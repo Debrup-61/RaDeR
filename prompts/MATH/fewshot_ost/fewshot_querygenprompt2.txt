@@ -1,0 +1,42 @@
+<QUESTION>: Find the quotient of the division $(3z^4-4z^3+5z^2-11z+2)/(2+3z)$.  
+Intermediate solution: To find the quotient of the division (3z4−4z3+5z2−11z+2)÷(2+3z), we perform polynomial long division.
+Query for Retrieval: 
+Theorem 1: Polynomial Division Algorithm
+Theorem statement: For any two polynomials P(z)(dividend) and D(z) (divisor), with deg(P(z)) ≥ deg (D(z)), there exist unique polynomials Q(z) (quotient) and R(z) (remainder) such that: P(z)=D(z)Q(z)+R(z)
+Preconditions: 
+(1) D(z)≠0 
+(2) The degree of the dividend P(z) must be greater than or equal to the degree of the divisor D(z).
+Why Preconditions are Satisfied: 
+(1) The divisor D(z)=3z+2 is a linear polynomial and is non-zero as z not equal to -2/3.
+(2) The degree of the dividend P(z)=3z^4 - 4z^3 + 5z^2 - 11z + 2 is 4, which is greater than the degree of the divisor (1).
+Subject: Algebra (Polynomial Theory)
+
+
+<QUESTION>: Many states use a sequence of three letters followed by a sequence of three digits as their standard license-plate pattern. Given that each three-letter three-digit arrangement is equally likely, the probability that such a license plate will contain at least one palindrome (a three-letter arrangement or a three-digit arrangement that reads the same left-to-right as it does right-to-left) is $\dfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n.$
+Intermediate solution: To calculate the probability of a three-letter palindrome, we first note that there are 26 possible choices for each letter. The first and last letters must be the same, so there are 26 choices for the first and last letters, and 26 choices for the middle letter. 
+Query for Retrieval: 
+Theorem 1: Principle of Inclusion-Exclusion
+Theorem Statement: For any two finite sets A and B, the size of their union is given by:
+|A \cup B| = |A| + |B| - |A \cap B|
+Preconditions:
+(1) A and B are finite sets.
+(2) A and B can overlap.
+Why Preconditions are Satisfied:
+(1) The sets A and B represent the events where the three-letter sequence and the three-digit sequence are palindromes, respectively. Both sets are finite because they are based on the finite number of possible sequences.
+(2) It is possible for both the three-letter sequence and the three-digit sequence to be palindromes simultaneously.
+Subject: Combinatorics (Set Theory)
+
+
+<QUESTION>: James writes a 3-page letter to 2 different friends twice a week. How many pages does he write a year? 
+Intermediate solution: He writes each friend 3*2=6 pages a week.
+Query for Retrieval:
+Theorem 1: Basic Multiplication Principle
+Theorem Statement: If there are m ways to do something and n ways to do another thing, then there are m*n to do both things.
+Preconditions:
+(1) There must be a clear count of options or occurrences for each action.
+(2) Each action is independent of the other.
+Why Preconditions are Satisfied:
+(1) James writes 3-page letters to 2 different friends, and he does this twice a week. Each of these actions has a clear count: 3 pages per letter, 2 friends, and 2 times per week.
+(2) The number of pages written per letter, the number of friends, and the frequency of writing are all independent of each other.
+Subject: Arithmetic (Basic Operations)
+

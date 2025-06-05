@@ -1,0 +1,63 @@
+[
+    {
+        "problem": "Solve for $Q$ if $\\sqrt{Q^3} = 16\\sqrt[8]{16}$.",
+        "level": "Level 4",
+        "type": "Algebra",
+        "solution": "To start removing the radicals, we square both sides of the equation. This gives $$Q^3 = \\left(\\sqrt{Q^3}\\right)^2 = \\left(16\\sqrt[8]{16}\\right)^2 = 256 \\cdot \\sqrt[4]{16} = 256 \\cdot 2 = 512.$$Thus, $Q = \\sqrt[3]{512} = \\sqrt[3]{2^9} = \\boxed{8}.$"
+    },
+    {
+        "problem": "What is $\\frac{3}{4}$ divided by $\\frac{7}{8}$?",
+        "level": "Level 2",
+        "type": "Prealgebra",
+        "solution": "Recall that division is the same as multiplication by a reciprocal. In other words, if $b$ is nonzero, then $a \\div b = a\\cdot \\frac{1}{b}$. In this case, \\[\n\\frac{3}{4}\\div \\frac{7}{8} = \\frac{3}{4}\\cdot \\frac{8}{7} = \\frac{3\\cdot 8}{4\\cdot 7}=\\frac{8}{4} \\cdot \\frac{3}{7} = 2 \\cdot \\frac{3}{7} = \\boxed{\\frac{6}{7}}.\n\\]"
+    },
+    {
+        "problem": "Let $r,$ $s,$ and $t$ be the roots of the equation $x^3 - 20x^2 + 18x - 7 = 0.$ Find the value of $(1+r)(1+s)(1+t).$",
+        "level": "Level 3",
+        "type": "Intermediate Algebra",
+        "solution": "Expanding, we have \\[(1+r)(1+s)(1+t) = 1 + (r+s+t) + (rs+st+tr) + rst.\\]By Vieta's formulas, this comes out to \\[1 + 20 + 18 + 7 = \\boxed{46}.\\]"
+    },
+    {
+        "problem": "The number 210 is the product of two consecutive positive integers and is also the product of three consecutive integers. What is the sum of those five integers?",
+        "level": "Level 2",
+        "type": "Number Theory",
+        "solution": "First we prime factorize $210=2\\cdot3\\cdot5\\cdot7$. Trying some pairwise products of these primes, we see that $210=(2\\cdot7)(3\\cdot5)=14\\cdot15$. Also, $210=(5)(2\\cdot3)(7)=5\\cdot6\\cdot7$. The sum of the five integers is $14+15+5+6+7=\\boxed{47}$."
+    },
+    {
+        "problem": "The polynomial\n$$g(x) = x^3 - x^2 - (m^2 + m) x + 2m^2 + 4m + 2$$is divisible by $x-4$ and all of its zeroes are integers. Find all possible values of $m$.",
+        "level": "Level 4",
+        "type": "Intermediate Algebra",
+        "solution": "Since $g(x)$ is divisible by $x-4$, we have $g(4)=0$. We also have\n\\begin{align*}\ng(4) &= 4^3 - 4^2 - (m^2+m)(4) + 2m^2+4m+2 \\\\\n&= 50 - 2m^2,\n\\end{align*}so $0=50-2m^2$. Thus $m$ can only be $5$ or $-5$. We check both possibilities.\n\nIf $m=5$, then $g(x)=x^3-x^2-30x+72=(x-4)(x^2+3x-18)=(x-4)(x+6)(x-3)$, so all zeroes are integers.\n\nIf $m=-5$, then $g(x)=x^3-x^2-20x+32=(x-4)(x^2+3x-8)$, but $x^2+3x-8$ does not have integer zeroes.\n\nTherefore, the only solution is $m=\\boxed{5}$."
+    },
+    {
+        "problem": "If $(x + y)^2 = 25$ and $xy = 6$, what is the value of $x^2 + y^2$?",
+        "level": "Level 1",
+        "type": "Algebra",
+        "solution": "We know that $(x + y)^2 = (x^2 + y^2) + 2xy = 25$. We are given that $xy = 6$. So, by substitution, $x^2 + y^2 + 2xy = x^2 + y^2 + 2(6) = 25$. It follows that $x^2 + y^2 = 25 - 12 = \\boxed{13}$."
+    },
+    {
+        "problem": "Each of the nine dots in this figure is to be colored red, white or blue. No two dots connected by a segment (with no other dots between) may be the same color. How many ways are there to color the dots of this figure?\n\n[asy]\ndraw((-75,0)--(-45,0)--(-60,26)--cycle);\ndraw((0,0)--(30,0)--(15,26)--cycle);\ndraw((75,0)--(105,0)--(90,26)--cycle);\ndraw((-60,26)--(90,26));\ndraw((-45,0)--(75,0));\ndot((-75,0));\ndot((-45,0));\ndot((-60,26));\ndot((15,26));\ndot((0,0));\ndot((30,0));\ndot((90,26));\ndot((75,0));\ndot((105,0));\n[/asy]",
+        "level": "Level 5",
+        "type": "Counting & Probability",
+        "solution": "There are six ways to color the equilateral triangle on the left.  Without loss of generality, assume it is colored as below.\n\n[asy]\ndraw((-75,0)--(-45,0)--(-60,26)--cycle);\ndraw((0,0)--(30,0)--(15,26)--cycle);\ndraw((75,0)--(105,0)--(90,26)--cycle);\ndraw((-60,26)--(90,26));\ndraw((-45,0)--(75,0));\n\ndot(\"B\", (-75,0), S);\ndot(\"W\", (-45,0), S);\ndot(\"R\", (-60,26), N);\ndot((15,26));\ndot((0,0));\ndot((30,0));\ndot((90,26));\ndot((75,0));\ndot((105,0));\n[/asy]\n\nThen there are three ways to color the middle equilateral triangle:\n\n[asy]\nint i;\npair transy = (0,-70);\n\nfor (i = 0; i <= 2; ++i) {\n  draw(shift(i*transy)*((-75,0)--(-45,0)--(-60,26)--cycle));\n  draw(shift(i*transy)*((0,0)--(30,0)--(15,26)--cycle));\n  draw(shift(i*transy)*((75,0)--(105,0)--(90,26)--cycle));\n  draw(shift(i*transy)*((-60,26)--(90,26)));\n  draw(shift(i*transy)*((-45,0)--(75,0)));\n\n  dot(\"B\", (-75,0) + i*transy, S);\n  dot(\"W\", (-45,0) + i*transy, S);\n  dot(\"R\", (-60,26) + i*transy, N);\n  dot((15,26) + i*transy);\n  dot((0,0) + i*transy);\n  dot((30,0) + i*transy);\n  dot((90,26) + i*transy);\n  dot((75,0) + i*transy);\n  dot((105,0) + i*transy);\n}\n\ndot(\"B\", (15,26), N);\ndot(\"R\", (0,0), S);\ndot(\"W\", (30,0), S);\n\ndot(\"W\", (15,26) + (0,-70), N);\ndot(\"R\", (0,0) + (0,-70), S);\ndot(\"B\", (30,0) + (0,-70), S);\n\ndot(\"W\", (15,26) + (0,-2*70), N);\ndot(\"B\", (0,0) + (0,-2*70), S);\ndot(\"R\", (30,0) + (0,-2*70), S);\n[/asy]\n\nNow we want to color the third equilateral triangle.  For each case above, we are exactly in the same position as before, as when the first equilateral triangle was colored, and we wanted to color the second equilateral triangle.  This means that in each case, there are three ways to color the third equilateral triangle.\n\nTherefore, the total number of possible colorings is $6 \\cdot 3 \\cdot 3 = \\boxed{54}$."
+    },
+    {
+        "problem": "In rectangle $ABCD$, $P$ is a point on $BC$ so that $\\angle APD=90^{\\circ}$. $TS$ is perpendicular to $BC$ with $BP=PT$, as shown.  $PD$ intersects $TS$ at $Q$.  Point $R$ is on $CD$ such that $RA$ passes through $Q$.  In $\\triangle PQA$, $PA=20$, $AQ=25$ and $QP=15$. [asy]\nsize(7cm);defaultpen(fontsize(9));\nreal sd = 7/9 * 12;\npath extend(pair a, pair b) {return a--(10 * (b - a));}\n\n// Rectangle\npair a = (0, 0); pair b = (0, 16); pair d = (24 + sd, 0); pair c = (d.x, b.y);\ndraw(a--b--c--d--cycle);\nlabel(\"$A$\", a, SW);label(\"$B$\", b, NW);label(\"$C$\", c, NE);label(\"$D$\", d, SE);\n\n// Extra points and lines\npair q = (24, 7); pair s = (q.x, 0); pair t = (q.x, b.y);\npair r = IP(c--d, extend(a, q));\npair p = (12, b.y);\ndraw(q--a--p--d--r--cycle);draw(t--s);\nlabel(\"$R$\", r, E); label(\"$P$\", p, N);label(\"$Q$\", q, 1.2 * NE + 0.2 * N);label(\"$S$\", s, S); label(\"$T$\", t, N);\n\n// Right angles and tick marks\nmarkscalefactor = 0.1;\ndraw(rightanglemark(a, b, p)); draw(rightanglemark(p, t, s)); draw(rightanglemark(q, s, d));draw(rightanglemark(a, p, q));\nadd(pathticks(b--p, 2, spacing=3.4, s=10));add(pathticks(p--t, 2, spacing=3.5, s=10));\n\n// Number labels\nlabel(\"$16$\", midpoint(a--b), W); label(\"$20$\", midpoint(a--p), NW); label(\"$15$\", midpoint(p--q), NE);\nlabel(\"$25$\", midpoint(a--q), 0.8 * S + E);\n[/asy] Find the lengths of $BP$ and $QT$.\n\nWhen writing your answer, first write the length of $BP$, then a comma, and then the length of $QT$. For example, if you find that these lengths are $5$ and $3/4$, respectively, your final answer should be written \"5,3/4\" (without the quotes).",
+        "level": "Level 2",
+        "type": "Geometry",
+        "solution": "Since $\\angle ABP=90^{\\circ}$, $\\triangle ABP$ is a right-angled triangle. By the Pythagorean Theorem, $$BP^2=AP^2-AB^2=20^2-16^2=144$$ and so $BP=12$, since $BP>0$.\n\nSince $\\angle QTP=90^{\\circ}$, $\\triangle QTP$ is a right-angled triangle with $PT=12$. Since $PT=BP=12$, then by the Pythagorean Theorem, $$QT^2=QP^2-PT^2=15^2-12^2 = 81$$ and so $QT=9$, since $QT>0$.\n\nOur final answer is then $\\boxed{12,9}$."
+    },
+    {
+        "problem": "In the magic square shown, the sums of the numbers in each row, column, and diagonal are the same. Five of these numbers are represented by $v$, $w$, $x$, $y$, and $z$. Find $y+z$.\n\n[asy]\npath a=(0,0)--(1,0)--(1,1)--(0,1)--cycle;\nfor (int i=0; i<3; ++i) {\nfor (int j=0; j<3; ++j) {\ndraw(shift((i,j))*a);\n};}\nlabel(\"25\",(0.5,0.3),N);\nlabel(\"$z$\",(1.5,0.3),N);\nlabel(\"21\",(2.5,0.3),N);\nlabel(\"18\",(0.5,1.3),N);\nlabel(\"$x$\",(1.5,1.3),N);\nlabel(\"$y$\",(2.5,1.3),N);\nlabel(\"$v$\",(0.5,2.3),N);\nlabel(\"24\",(1.5,2.3),N);\nlabel(\"$w$\",(2.5,2.3),N);\n[/asy]",
+        "level": "Level 5",
+        "type": "Algebra",
+        "solution": "Since $v$ appears in the first row, first column, and on diagonal, the sum of the remaining two numbers in each of these lines must be the same. Thus, $$25+18 = 24 +w = 21+x,$$ so $w = 19$ and $x=22$. now 25,22, and 19 form a diagonal with a sum of 66, so we can find $v=23$, $y=26$, and $z=20$. Hence $y+z=\\boxed{46}$."
+    },
+    {
+        "problem": "Dave rode 30 miles at 10 miles per hour and 10 miles at 30 miles per hour. What was his average speed, in miles per hour, for the entire ride?",
+        "level": "Level 4",
+        "type": "Algebra",
+        "solution": "Dave rode a total of $40$ miles.  The $30$ mile segment took $\\frac{30}{10}=3$ hours, while the $10$ mile segment took $\\frac{10}{30}=\\frac{1}{3}$ hours, so the full ride took $3+\\frac{1}{3}=\\frac{10}{3}$ hours.\n\nSo the average speed was  $\\frac{40}{\\frac{10}{3}}=\\boxed{12}$ miles per hour."
+    }
+
+]

@@ -1,0 +1,8 @@
+{
+    "prompt_template": "You are given a mathematical question and an intermediate solution. Your job is to generate the next step of the solution. If the next step generated contains the answer, the answer should be given in the format of \"$\\boxed<ANSWER>$\", where <ANSWER> should be a numeric answer as shown in the examples below.\n\n{examples}\n\nQuestion: {instruction}\nIntermediate Solution: ",
+    "stop_tokens": [
+        "Question:",
+        "Question"
+    ],
+    "answer_marker": "boxed"
+}

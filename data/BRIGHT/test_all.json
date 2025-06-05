@@ -1,0 +1,610 @@
+[
+    {
+        "id": "TheoremQA_jianyu_xu/pigeonhole_3.json",
+        "problem": "Mary is planning to bake exactly 10 cookies, and each cookie may be one of three different shapes -- triangle, circle, and square. Mary wants the cookie shapes to be a diverse as possible. What is the smallest possible count for the most common shape across the ten cookies?",
+        "solution": "In a group of 10 people, each of whom has one of 3 different eye colors, at least how many people must have the same eye color?\nBy the Pigeonhole Principle, if we have 10 people and only 3 different eye colors, then at least $\\lceil \\frac{10}{3} \\rceil = 4$ people must have the same eye color. Therefore, the answer is 4.",
+        "gold_theorem_ids": "['18695']",
+        "gold_answer": "4",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/pigeonhole_2.json",
+        "problem": "Suppose you have a square sandbox of dimension 1 inch by 1 inch. You have 19 flags that you are going to plant anywhere in the sandbox. You also have a circular hoop with a radius of $\\frac{\\sqrt 2}{6}$, which you want to put in the sandbox to include as many flags as possible. What is the minimum number of flags you can ensure will always be within the hoop no matter how the flags are planted in the sandbox?",
+        "solution": "Arbitrarily place 19 points in a unit square and cover as many of these points as possible with a circle of diameter $\\frac{\\sqrt 2}{3}$. Question: At least how many points can be guaranteed to be covered?\nWe can divide the unit square into 9 smaller squares, each with side length 1/3. Since there are 19 points and 9 smaller squares, by the Pigeonhole Principle, at least one of these smaller squares must contain at least 3 points.\n\nNow, consider a circle with diameter $\\frac{\\sqrt 2}{3}$. The diagonal of each smaller square has length $\\frac{\\sqrt 2}{3}$, so the circle can be placed inside the smaller square in such a way that it covers the entire square. Therefore, the circle can cover at least 3 points in that square.\n\nTherefore, the answer is 3.",
+        "gold_theorem_ids": "['18695']",
+        "gold_answer": "3",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_1.json",
+        "problem": "In a game of strategy, two players are deciding on the amount of money to send to the other player. The first rule is that 15 times Player A's monetary amount must be equal to the difference between seven times Player A's amount and Player B's amount. The second rule is that 15 times Player B's amount is equal to player A's amount times negative six plus eight times Player B's amount. What is the amount of money that Player A should be sending to Player B?",
+        "solution": "Find the x value of the solutions to the linear system: 7x - y = 15x, -6x + 8y = 15y.\nFirst, let's solve the linear system using the substitution method. We can rewrite the first equation as y = 7x - 15x, which simplifies to y = -8x. Now, we can substitute this expression for y into the second equation:\n\n-6x + 8(-8x) = 15(-8x)\n\n-6x - 64x = -120x\n\nNow, we can divide both sides by -6:\n\nx + 64x/6 = 120x/6\n\nx + 32x/3 = 20x\n\nNow, let's subtract 20x from both sides:\n\nx + 32x/3 - 20x = 0\n\nNow, let's find a common denominator for the fractions:\n\n3x/3 + 32x/3 - 60x/3 = 0\n\n(3x + 32x - 60x)/3 = 0\n\nNow, let's simplify the numerator:\n\n(-25x)/3 = 0\n\nNow, we can multiply both sides by 3 to get rid of the denominator:\n\n-25x = 0\n\nFinally, we can divide both sides by -25 to find the value of x:\n\nx = 0\n\nTherefore, the answer is 0.",
+        "gold_theorem_ids": "['8569']",
+        "gold_answer": "0",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/eigen_value1.json",
+        "problem": "Imagine you have a magical box that transforms any object you put inside it, where the object is represented by the column vector x = (x_1, x_2). The box's transformation can be represented by the matrix A = [[5, 4], [1, 2]], so when given an object x, the box outputs the new object Ax. On some special objects, this new object is just a constant multiple of the original object, λx = (λx_1, λx_2). Find both possible values of λ where this occurs — note that these are the box's eigenvalues.",
+        "solution": "For matrix A = [[5, 4], [1, 2]], what are its eigen values?\nThe eigenvalues of a matrix A can be found by solving the characteristic equation det(A - λI) = 0, where λ is the eigenvalue and I is the identity matrix. \n\nFor matrix A = [[5, 4], [1, 2]], the characteristic equation is det(A - λI) = 0 becomes:\n\n|5-λ  4  |\n|1   2-λ| = (5-λ)(2-λ) - 4 = λ^2 - 7λ + 6 = 0\n\nSolving this quadratic equation, we get the eigenvalues of A as λ = 1 and λ = 6. \n\nTherefore, the answer is [1, 6].",
+        "gold_theorem_ids": "['2723', '2724']",
+        "gold_answer": "[1, 6]",
+        "gold_answer_type": "list of integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/definite_matrix1.json",
+        "problem": "Imagine you're evaluating the safety of a building's structure through a simplified model. The building is represented by a 2x2 matrix with the values [1, 4] in the first row and [4, 1] in the second row. Safety is defined as the matrix being positive definite. Based on these definitions, is the building safe?",
+        "solution": "Consider the matrix of A=[[1, 4], [4, 1]], is this a positive definite matrix?\nTo determine if the matrix A is positive definite, we need to check if all its eigenvalues are positive. Let's find the eigenvalues of A:\n\nA = [[1, 4], [4, 1]]\n\nThe characteristic equation is given by the determinant of (A - λI) = 0, where λ is the eigenvalue and I is the identity matrix.\n\n(A - λI) = [[1 - λ, 4], [4, 1 - λ]]\n\ndet(A - λI) = (1 - λ)^2 - 4 * 4 = λ^2 - 2λ - 15\n\nThe roots of this quadratic equation are the eigenvalues of A. We can find the roots using the quadratic formula:\n\nλ = (-b ± √(b^2 - 4ac)) / 2a\n\nIn this case, a = 1, b = -2, and c = -15.\n\nλ = (2 ± √((-2)^2 - 4 * 1 * (-15))) / 2 * 1\nλ = (2 ± √(64)) / 2\nλ = (2 ± 8) / 2\n\nThe two eigenvalues are:\n\nλ1 = (2 + 8) / 2 = 10 / 2 = 5\nλ2 = (2 - 8) / 2 = -6 / 2 = -3\n\nSince one of the eigenvalues (λ2 = -3) is negative, the matrix A is not positive definite.\n\nTherefore, the answer is False.",
+        "gold_theorem_ids": "['20341', '5725']",
+        "gold_answer": "False",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_1_2.json",
+        "problem": "A landscaper is planting a trail of flowers through a garden with grass patches in a tile pattern. The trail goes from the house on the west side (x=-10) to the gate on the east side (x=10). The position of each flower falls on the graph of a quadratic equation f(x) = a + bx + cx^2, and the y-positions of the flowers at x=1, x=2, and x=3 are -1, 3, and 13, respectively. The landscaper forgot the y-position of the flower at x-position -1, but remembers the quadratic equation all flower positions satisfies. Can you figure out the y-position of that flower by using the equation?",
+        "solution": "Suppose the graph of a polynomial f(t) = a + bt + ct^2 passes through points (1, -1), (2, 3), and (3, 13). What is f(-1)?\nWe are given three points (1, -1), (2, 3), and (3, 13) that lie on the graph of the polynomial f(t) = a + bt + ct^2. We can use these points to create a system of equations to solve for the coefficients a, b, and c.\n\nFor point (1, -1):\n-1 = a + b(1) + c(1)^2\n-1 = a + b + c\n\nFor point (2, 3):\n3 = a + b(2) + c(2)^2\n3 = a + 2b + 4c\n\nFor point (3, 13):\n13 = a + b(3) + c(3)^2\n13 = a + 3b + 9c\n\nNow we have a system of three equations with three unknowns:\n\n1) -1 = a + b + c\n2) 3 = a + 2b + 4c\n3) 13 = a + 3b + 9c\n\nWe can solve this system of equations using substitution or elimination. Let's use elimination:\n\nSubtract equation 1 from equation 2:\n(3 - (-1)) = (2b - b) + (4c - c)\n4 = b + 3c\n\nSubtract equation 1 from equation 3:\n(13 - (-1)) = (3b - b) + (9c - c)\n14 = 2b + 8c\n\nNow we have a new system of two equations with two unknowns:\n\n4) 4 = b + 3c\n5) 14 = 2b + 8c\n\nMultiply equation 4 by 2 to match the coefficient of b in equation 5:\n8 = 2b + 6c\n\nSubtract the new equation 4 from equation 5:\n(14 - 8) = (8c - 6c)\n6 = 2c\n\nNow we can solve for c:\nc = 6 / 2\nc = 3\n\nSubstitute the value of c back into equation 4 to find b:\n4 = b + 3(3)\n4 = b + 9\nb = -5\n\nSubstitute the values of b and c back into equation 1 to find a:\n-1 = a + (-5) + 3\n-1 = a - 2\na = 1\n\nNow we have the polynomial f(t) = 1 - 5t + 3t^2. We are asked to find f(-1):\n\nf(-1) = 1 - 5(-1) + 3(-1)^2\nf(-1) = 1 + 5 + 3\nf(-1) = 9\n\nTherefore, the answer is 9.",
+        "gold_theorem_ids": "['8569', '21613']",
+        "gold_answer": "9",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/L'Hôpital_rule1.json",
+        "problem": "Imagine you're trying to tune a guitar. To do this, you need to figure out the vibration amplitude: for each tuning setting x that you try, the amplitude is given by (sin(2x) / x)^(1+x). What does the amplitude approach as you try settings x that approach 0?",
+        "solution": "What is (sin(2x) / x)^(1+x) when x is approaching 0?\nTo find the limit of (sin(2x) / x)^(1+x) as x approaches 0, we can use L'Hopital's rule and the properties of limits.\n\nFirst, let's rewrite the expression as e^((1+x) * ln((sin(2x) / x))). Now, we need to find the limit of (1+x) * ln((sin(2x) / x)) as x approaches 0.\n\nUsing L'Hopital's rule, we differentiate the numerator and the denominator with respect to x:\n\nNumerator: d/dx (sin(2x)) = 2cos(2x)\nDenominator: d/dx (x) = 1\n\nNow, we have the limit of (2cos(2x)) / 1 as x approaches 0. As x approaches 0, cos(2x) approaches 1, so the limit is 2.\n\nNow, we have e^(2) as the limit of the original expression.\n\nTherefore, the answer is e^2.",
+        "gold_theorem_ids": "['11592']",
+        "gold_answer": "2.0",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_calculus_2_11.json",
+        "problem": "Imagine you're programming a video game where at a given level x, a character's magic power is given by cos(x) and physical power is given by x^2023. If we allow the level x to be any real number, does there exist a level x where the character's magic and physical power are equal in value?",
+        "solution": "Does cos(x) = x^k have a solution for k = 2023?\nTo determine if cos(x) = x^k has a solution for k = 2023, we can consider the properties of the cosine function and the behavior of x^k for odd values of k.\n\nThe cosine function has a range of [-1, 1], meaning that the output of cos(x) will always be between -1 and 1 for any real value of x. On the other hand, x^k for odd values of k (such as k = 2023) will have the same sign as x. Specifically, if x > 1, then x^k > 1, and if x < -1, then x^k < -1.\n\nNow, let's consider the interval [-1, 1] for x. For x = 0, cos(0) = 1, and 0^2023 = 0, so there is no solution at x = 0. For x in the interval (0, 1), the cosine function is positive and decreasing, while x^2023 is positive and increasing. Since cos(1) < 1 and 1^2023 = 1, there must be a point in the interval (0, 1) where cos(x) = x^2023 by the Intermediate Value Theorem.\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['12010', '12011', '12012', '20761']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_4.json",
+        "problem": "Imagine you have a collection of different tile patterns represented by 3x3 matrices, where you have simplified these patterns as much as possible by swapping rows, swapping columns, and multiplying a row or column by a negative value — the end result is that all given tile patterns are in reduced row-echelon form. In particular, the collection contains all possible 3x3 matrices in reduced row-echelon form. Does this collection form a subspace of R^{3*3}?",
+        "solution": "Is the set of 3 * 3 matrices in reduced row-echelon form a subspace of R^{3 * 3}?\nTo determine if the set of 3 * 3 matrices in reduced row-echelon form is a subspace of R^{3 * 3}, we need to check if it satisfies the following three conditions:\n\n1. The zero matrix is in the set.\n2. The set is closed under addition.\n3. The set is closed under scalar multiplication.\n\n1. The zero matrix is a 3 * 3 matrix in reduced row-echelon form, so the first condition is satisfied.\n\n2. Let's consider two 3 * 3 matrices A and B in reduced row-echelon form. When we add them together, the resulting matrix C may not be in reduced row-echelon form. For example:\n\nA = | 1 0 0 |    B = | 1 0 0 |    A + B = C = | 2 0 0 |\n    | 0 1 0 |        | 0 1 0 |                | 0 2 0 |\n    | 0 0 1 |        | 0 0 1 |                | 0 0 2 |\n\nMatrix C is not in reduced row-echelon form, so the set is not closed under addition.\n\n3. Let's consider a 3 * 3 matrix A in reduced row-echelon form and a scalar k. When we multiply A by k, the resulting matrix D may not be in reduced row-echelon form. For example:\n\nA = | 1 0 0 |    k = 2    kA = D = | 2 0 0 |\n    | 0 1 0 |                      | 0 2 0 |\n    | 0 0 1 |                      | 0 0 2 |\n\nMatrix D is not in reduced row-echelon form, so the set is not closed under scalar multiplication.\n\nSince the set of 3 * 3 matrices in reduced row-echelon form does not satisfy all three conditions, it is not a subspace of R^{3 * 3}. Therefore, the answer is False.",
+        "gold_theorem_ids": "['21198', '11115', '9996', '17877']",
+        "gold_answer": "False",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_panlu/similarity2.json",
+        "problem": "Imagine two different models of the same type of toy car, Model A and Model B. Model A has a front bumper to rear bumper length of 12 units and a door width of 9 units. Model B, which is a scaled version of Model A, has a front bumper to rear bumper length of 3y-1 units, a door width of 6 units, and a hood length of 10 units. If the proportions between corresponding parts of these two models are the same, what is the value of y?",
+        "solution": "If polygon ACDF is similar to polygon VWYZ, AF = 12, CD = 9, YZ = 10, YW = 6, and ZV = 3y-1, find y.\nWe know that similar polygons have corresponding sides that are proportional. Therefore, we can set up the following proportion:\n\nAF/AC = YZ/VZ\n\nSubstituting the given values, we get:\n\n12/(9+CD) = 10/(3y-1+6)\n\nSimplifying this equation, we get:\n\n12/(9+CD) = 10/(3y+5)\n\nCross-multiplying, we get:\n\n12(3y+5) = 10(9+CD)\n\nExpanding and simplifying, we get:\n\n36y + 60 = 90 + 10CD\n\nSubstituting CD = 9, we get:\n\n36y + 60 = 90 + 90\n\nSimplifying further, we get:\n\n36y = 120\n\nDividing both sides by 36, we get:\n\ny = 3.33 (rounded to two decimal places)\n\nTherefore, the answer is 3.33.",
+        "gold_theorem_ids": "['22806', '14371']",
+        "gold_answer": "3",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_xinyi/maximum_entropy_2.json",
+        "problem": "A scientist is studying a certain type of bacteria that can survive in extreme conditions. She wants to model the growth of this bacteria population based on two factors: the average size of the population (which she has a specific target for) and the average natural logarithm of the population size (which she also has a target value for). Given these constraints, she's trying to determine the maximum entropy density distribution to use. Which of the following distributions is it? (a) Exponential. (b) Gamma. (c) Beta. (d) Uniform.",
+        "solution": "Find the maximum entropy density $f$, defined for $x\\geq 0$, satisfying $E(X)=\\alpha_1$, $E(\\ln{X})=\\alpha_2$. Which family of densities is this? (a) Exponential. (b) Gamma. (c) Beta. (d) Uniform.\nTo find the maximum entropy density function $f(x)$, we need to use the method of Lagrange multipliers. The entropy functional is given by:\n\n$H[f] = -\\int_0^\\infty f(x) \\ln{f(x)} dx$\n\nWe need to maximize this functional subject to the constraints:\n\n$\\int_0^\\infty f(x) dx = 1$\n\n$\\int_0^\\infty x f(x) dx = \\alpha_1$\n\n$\\int_0^\\infty \\ln{x} f(x) dx = \\alpha_2$\n\nUsing the method of Lagrange multipliers, we form the following functional:\n\n$J[f] = -\\int_0^\\infty f(x) \\ln{f(x)} dx + \\lambda_0 \\left(\\int_0^\\infty f(x) dx - 1\\right) + \\lambda_1 \\left(\\int_0^\\infty x f(x) dx - \\alpha_1\\right) + \\lambda_2 \\left(\\int_0^\\infty \\ln{x} f(x) dx - \\alpha_2\\right)$\n\nTaking the functional derivative with respect to $f(x)$ and setting it to zero, we get:\n\n$-\\ln{f(x)} - 1 + \\lambda_0 + \\lambda_1 x + \\lambda_2 \\ln{x} = 0$\n\nSolving for $f(x)$, we obtain:\n\n$f(x) = e^{-1 + \\lambda_0 + \\lambda_1 x + \\lambda_2 \\ln{x}} = e^{\\lambda_0 - 1} x^{\\lambda_2} e^{\\lambda_1 x}$\n\nThis is the general form of the Gamma distribution with parameters $k = \\lambda_2 + 1$ and $\\theta = -\\frac{1}{\\lambda_1}$. Therefore, the maximum entropy density function is a member of the Gamma family of distributions.\n\nTherefore, the answer is (b) Gamma.",
+        "gold_theorem_ids": "['2371']",
+        "gold_answer": "(b)",
+        "gold_answer_type": "option"
+    },
+    {
+        "id": "TheoremQA_maxku/signalprocessing11-nyquist.json",
+        "problem": "Imagine you're recording a song using digital equipment. The highest pitch in the song produces a sound wave that vibrates at a frequency of 1000 cycles per second (Hertz). The equation is given by  $$ x(t)=\\cos (1000 \\pi t) $$. If you set your recording equipment to capture 2000 snapshots (samples) of the sound wave every second, does aliasing occur?",
+        "solution": "Consider $x(t)$ to be given as, $$ x(t)=\\cos (1000 \\pi t) $$ . Let the sampling frequency be $2000 \\mathrm{~Hz}$. Does aliasing occur?\nThe maximum frequency component in $x(t)$ is $1000\\mathrm{~Hz}$. According to the Nyquist-Shannon sampling theorem, the sampling frequency should be at least twice the maximum frequency component to avoid aliasing. Here, the sampling frequency is $2000\\mathrm{~Hz}$ which is exactly twice the maximum frequency component. Therefore, aliasing does not occur. \n\nTherefore, the answer is False.",
+        "gold_theorem_ids": "['8547']",
+        "gold_answer": "False",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Stirling_number_first_kind_5.json",
+        "problem": "Imagine you're organizing a small dinner party with 8 friends and you have 2 identical round tables to seat them. Each table can seat any number of guests, but you want to avoid leaving a table empty. In how many different ways can you arrange the seating of your 8 friends?",
+        "solution": "In how many ways can 8 people be seated at 2 identical round tables? Each table must have at least 1 person seated.\nTo solve this problem, we will use the concept of circular permutations. When arranging people around a circular table, we fix one person's position and arrange the others relative to that person. So, for n people, there are (n-1)! ways to arrange them around a circular table.\n\nLet's consider the different cases for seating the 8 people at 2 identical round tables:\n\n1. 7 people at table 1 and 1 person at table 2: There are 8 ways to choose the person to sit alone at table 2. For the 7 people at table 1, there are (7-1)! = 6! ways to arrange them.\n\n2. 6 people at table 1 and 2 people at table 2: There are 8C2 ways to choose the 2 people to sit at table 2. For the 6 people at table 1, there are (6-1)! = 5! ways to arrange them. For the 2 people at table 2, there are (2-1)! = 1! ways to arrange them.\n\n3. 5 people at table 1 and 3 people at table 2: There are 8C3 ways to choose the 3 people to sit at table 2. For the 5 people at table 1, there are (5-1)! = 4! ways to arrange them. For the 3 people at table 2, there are (3-1)! = 2! ways to arrange them.\n\n4. 4 people at table 1 and 4 people at table 2: There are 8C4 ways to choose the 4 people to sit at table 2. For the 4 people at table 1, there are (4-1)! = 3! ways to arrange them. For the 4 people at table 2, there are (4-1)! = 3! ways to arrange them. However, since the tables are identical, we need to divide by 2 to avoid double counting.\n\nNow, let's calculate the total number of ways:\n\n1. 8 * 6! = 8 * 720 = 5760\n2. 8C2 * 5! * 1! = 28 * 120 * 1 = 3360\n3. 8C3 * 4! * 2! = 56 * 24 * 2 = 2688\n4. (8C4 * 3! * 3!)/2 = (70 * 6 * 6)/2 = 1260\n\nAdding all the cases together, we get 5760 + 3360 + 2688 + 1260 = 13068.\n\nTherefore, the answer is 13068.",
+        "gold_theorem_ids": "['15792']",
+        "gold_answer": "13068",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_maxku/ipnetwork13-hammingdist.json",
+        "problem": "Imagine you're comparing three digital images that are extremely simplified down to a grid of 5 pixels each, represented by either black (0) or white (1) pixels. The images are as follows: Image A: 00000, Image B: 10101, and Image C: 01010. By counting the number of pixels that differ between each pair of images, find the smallest number of differing pixels.",
+        "solution": "Calculate the Hamming pairwise distances and determine the minimum Hamming distance among the following codewords: 00000,10101,01010\nThe Hamming pairwise distances between the given codewords are:\n\n- Distance between 00000 and 10101 = 3\n- Distance between 00000 and 01010 = 2\n- Distance between 10101 and 01010 = 5\n\nTherefore, the minimum Hamming distance among the given codewords is 2.",
+        "gold_theorem_ids": "['14101']",
+        "gold_answer": "2",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_xinyi/linear_projection.json",
+        "problem": "You are working with four possible machines, each of which is represented by a matrix that operates on an input vector $v$: (a) $(\\Phi^T\\Phi)^{-1}$. (b) $\\Phi(\\Phi^T\\Phi)^{-1}$. (c) $\\Phi(\\Phi^T\\Phi)^{-1}\\Phi^T$. (d) $\\Phi^T(\\Phi^T\\Phi)^{-1}\\Phi^T$. Which of them takes any vector $v$ and projects it onto the space spanned by the columns of $\\Phi$?",
+        "solution": "Which of the following matrices takes any vector $v$ and projects it onto the space spanned by the columns of $\\Phi$? (a) $(\\Phi^T\\Phi)^{-1}$. (b) $\\Phi(\\Phi^T\\Phi)^{-1}$. (c) $\\Phi(\\Phi^T\\Phi)^{-1}\\Phi^T$. (d) $\\Phi^T(\\Phi^T\\Phi)^{-1}\\Phi^T$.\nThe correct answer is (c) $\\Phi(\\Phi^T\\Phi)^{-1}\\Phi^T$. This is known as the projection matrix onto the column space of $\\Phi$. Therefore, the answer is (c).",
+        "gold_theorem_ids": "['18400']",
+        "gold_answer": "(c)",
+        "gold_answer_type": "option"
+    },
+    {
+        "id": "TheoremQA_mingyin/Lebesgue-measure1.json",
+        "problem": "Imagine you have a digital scale that can measure the weight of an infinite number of infinitely small digital dots. Each dot can either be on or off, and their weights are determined by a specific pattern: the first dot weighs 1/4 gram, the second dot weighs 1/16 grams, the third dot weighs 1/64 grams, and so on, with each subsequent dot weighing exactly one-fourth the weight of the previous dot. If you can create any combination of these dots being on (weighing their specified amount) or off (weighing nothing), and you can also add a whole number of grams to the scale (from a set of weights that are whole grams), what would be the total possible weight measured by the scale? (specifically, Lebesgue measure of this sum)",
+        "solution": "Let $A=\\{n+\\sum_{p=1}^{\\infty} a_p 2^{-2p}: n \\in \\mathbf{Z}, a_p=0 or 1 \\}$. What is the Lebesgue measure of A?\nTo find the Lebesgue measure of A, we need to determine the length of the intervals that A covers on the real number line. Since n is an integer, each element in A can be written as an integer plus a sum of the form $\\sum_{p=1}^{\\infty} a_p 2^{-2p}$, where $a_p$ is either 0 or 1.\n\nThe sum $\\sum_{p=1}^{\\infty} a_p 2^{-2p}$ is a geometric series with the first term $2^{-2}$ and the common ratio $2^{-2}$. The sum of an infinite geometric series is given by the formula $\\frac{a}{1-r}$, where a is the first term and r is the common ratio. In this case, the sum is $\\frac{2^{-2}}{1-2^{-2}} = \\frac{1}{3}$.\n\nSince $a_p$ can be either 0 or 1, the sum can take any value between 0 and $\\frac{1}{3}$. Therefore, for each integer n, A covers an interval of length $\\frac{1}{3}$ on the real number line. Since there are infinitely many integers, A covers an infinite number of disjoint intervals, each of length $\\frac{1}{3}$.\n\nThe Lebesgue measure of A is the sum of the lengths of these intervals. Since there are infinitely many intervals, each of length $\\frac{1}{3}$, the Lebesgue measure of A is infinite. Therefore, the answer is False.",
+        "gold_theorem_ids": "['11426', '16984']",
+        "gold_answer": "0.0",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_mingyin/series2.json",
+        "problem": "Imagine you're trying to balance a financial ledger for an infinite number of transactions. At transaction k (starts at 1), the total increases by $\\frac{(-1)^{k-1}}{k} \\sum_{n=0}^{\\infty} \\frac{1}{k 2^n+1}$. What's the total after infinitely many transactions?",
+        "solution": "What is the value of the series $\\sum_{k=1}^{\\infty} \\frac{(-1)^{k-1}}{k} \\sum_{n=0}^{\\infty} \\frac{1}{k 2^n+1}$?\nWe can first simplify the inner sum as follows:\n$$\\sum_{n=0}^{\\infty} \\frac{1}{k 2^n+1} = \\frac{1}{k+1} + \\frac{1}{2k+1} + \\frac{1}{4k+1} + \\cdots$$\nThis is a geometric series with first term $\\frac{1}{k+1}$ and common ratio $\\frac{1}{2}$, so its sum is $\\frac{1}{k+1} \\cdot \\frac{1}{1-\\frac{1}{2}} = \\frac{2}{k+1}$.\n\nSubstituting this back into the original series, we get:\n$$\\sum_{k=1}^{\\infty} \\frac{(-1)^{k-1}}{k} \\cdot \\frac{2}{k+1} = \\sum_{k=1}^{\\infty} \\frac{(-1)^{k-1} \\cdot 2}{k(k+1)}$$\nWe can use partial fractions to write this as:\n$$\\frac{(-1)^{k-1} \\cdot 2}{k(k+1)} = (-1)^{k-1} \\left(\\frac{1}{k} - \\frac{1}{k+1}\\right)$$\nThus, the series telescopes and simplifies to:\n$$\\sum_{k=1}^{\\infty} \\frac{(-1)^{k-1} \\cdot 2}{k(k+1)} = \\left(\\frac{1}{1} - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\left(\\frac{1}{3} - \\frac{1}{4}\\right) + \\cdots$$\nAll the terms cancel out except for the first and last, so we are left with:\n$$\\sum_{k=1}^{\\infty} \\frac{(-1)^{k-1}}{k} \\sum_{n=0}^{\\infty} \\frac{1}{k 2^n+1} = 1$$\nTherefore, the answer is $\\boxed{1}$.",
+        "gold_theorem_ids": "['8388']",
+        "gold_answer": "1.0",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/ODE2.json",
+        "problem": "Imagine you're programming a video game that simulates the flight of a spaceship in outer space. The spaceship's movement is affected by various forces, and you need to predict its position at a specific time to ensure it doesn't collide with obstacles. You know the spaceship's initial position is 2 units from the starting point and its initial speed is 3 units per second. The forces acting on the spaceship cause its acceleration and speed to change in a way that's a bit complex: the acceleration at any moment depends on the spaceship's current position, speed, and the time elapsed. Specifically, y''+xy'+y=0. You decide to use a simplified method — Euler's method — to estimate the spaceship's position after 0.2 seconds. What is the estimated position of the spaceship?",
+        "solution": "Use Euler's Method to calculate the approximation of y(0.2) where y(x) is the solution of the initial-value problem that is as follows. y''+xy'+y=0 and y(0)=2 and y'(0) = 3.\nTo use Euler's method, we need to convert the given second-order differential equation into a system of first-order differential equations. Let's define two new functions:\n\nu(x) = y(x)\nv(x) = y'(x)\n\nNow, we have the following system of first-order differential equations:\n\nu'(x) = v(x)\nv'(x) = -xv(x) - u(x)\n\nWith the initial conditions:\n\nu(0) = 2\nv(0) = 3\n\nNow, we can apply Euler's method to approximate the solution at x = 0.2. Let's use a step size of h = 0.1. We will perform two iterations to reach x = 0.2.\n\nFirst iteration (x = 0.1):\n\nu1 = u0 + h * v0 = 2 + 0.1 * 3 = 2.3\nv1 = v0 + h * (-x0 * v0 - u0) = 3 + 0.1 * (-0 * 3 - 2) = 2.8\n\nSecond iteration (x = 0.2):\n\nu2 = u1 + h * v1 = 2.3 + 0.1 * 2.8 = 2.58\nv2 = v1 + h * (-x1 * v1 - u1) = 2.8 + 0.1 * (-0.1 * 2.8 - 2.3) = 2.572\n\nTherefore, the answer is 2.58.",
+        "gold_theorem_ids": "['2380', '20418', '21599', '21600']",
+        "gold_answer": "2.58",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/Liouville’s_theorem1.json",
+        "problem": "Imagine you're a magician who has created a spell that can change the temperature in any room to a specific degree, no matter where it is in the world. This is represented by f = u(z) + iv(z), an entire function in complex plane C. You've discovered that no matter how you cast this spell, the change in temperature you can achieve is always below a certain level, let's say 100 degrees Fahrenheit. I.e., the modulus of the function is bounded. If this spell works everywhere on Earth without fail, does this mean your spell can only ever achieve one specific temperature change, no matter where you use it or how — is the function constant?",
+        "solution": "Let f = u(z) + iv(z) be an entire function in complex plane C. If |u(z)| < M for every z in C, where M is a positive constant, is f is a constant function?\nYes, f is a constant function.\n\nAccording to Liouville's theorem, if a function is entire (holomorphic on the entire complex plane) and bounded, then it must be a constant function. Since |u(z)| < M for every z in C, the function f is bounded. Therefore, by Liouville's theorem, f must be a constant function.\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['14493', '11018', '20530']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_panlu/rigid-body3.json",
+        "problem": "Imagine you're playing a game where you have a toy cannon that shoots small metal balls. You decide to aim at a lightweight door that can swing open on its hinges. The door is 1 meter wide and weighs 15 kilograms. You shoot a metal ball weighing 10 grams at a speed of 400 meters per second straight at the middle of the door, and the ball sticks to it. What is the new angular speed of the door after the ball sticks to it? (Unit: rad/s)",
+        "solution": "A door 1.00 m wide, of mass 15 kg, can rotate freely about a vertical axis through its hinges. A bullet with a mass of 10 g and a speed of 400 m/s strikes the center of the door, in a direction perpendicular to the plane of the door, and embeds itself there. Find the door's angular speed. (Unit: rad/s)\nTo find the door's angular speed, we can use the conservation of angular momentum. The initial angular momentum of the system (door + bullet) is equal to the final angular momentum of the system.\n\nInitially, the door is at rest, so its angular momentum is 0. The bullet has linear momentum, which can be converted to angular momentum about the hinge axis. The initial angular momentum of the bullet is given by:\n\nL_bullet_initial = m_bullet * v_bullet * r\n\nwhere m_bullet is the mass of the bullet (0.01 kg), v_bullet is the speed of the bullet (400 m/s), and r is the distance from the hinge axis to the point of impact (0.5 m).\n\nL_bullet_initial = 0.01 kg * 400 m/s * 0.5 m = 2 kg*m^2/s\n\nAfter the collision, the bullet is embedded in the door, and they both rotate together. The final angular momentum of the system is given by:\n\nL_final = I_total * ω\n\nwhere I_total is the total moment of inertia of the door and the bullet, and ω is the angular speed we want to find.\n\nThe moment of inertia of the door can be approximated as that of a thin rectangular plate rotating about one edge:\n\nI_door = (1/3) * M_door * L_door^2\n\nwhere M_door is the mass of the door (15 kg) and L_door is the width of the door (1 m).\n\nI_door = (1/3) * 15 kg * 1 m^2 = 5 kg*m^2\n\nThe moment of inertia of the bullet can be approximated as that of a point mass:\n\nI_bullet = m_bullet * r^2\n\nI_bullet = 0.01 kg * 0.5 m^2 = 0.0025 kg*m^2\n\nThe total moment of inertia is the sum of the individual moments of inertia:\n\nI_total = I_door + I_bullet = 5 kg*m^2 + 0.0025 kg*m^2 = 5.0025 kg*m^2\n\nNow, we can use the conservation of angular momentum:\n\nL_final = L_bullet_initial\n\nI_total * ω = 2 kg*m^2/s\n\nω = (2 kg*m^2/s) / (5.0025 kg*m^2) = 0.3998 rad/s\n\nTherefore, the answer is 0.3998.",
+        "gold_theorem_ids": "['15865', '230']",
+        "gold_answer": "0.4",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_5.json",
+        "problem": "Imagine you're working on a computer graphics project where you need to adjust the brightness of a pixel represented by a 4-dimensional vector [9, 0, 0, 0]. You have two filters available, represented by the vectors [2, 2, 1, 0] and [-2, 2, 0, 1]. What is the orthogonal projection of the original vector onto the space of vectors formed by linear combinations of the filters?",
+        "solution": "Find the orthogonal projection of 9e_1 onto the subspace of R^4 spanned by [2, 2, 1, 0] and [-2, 2, 0, 1].\nTo find the orthogonal projection of 9e_1 onto the subspace of R^4 spanned by [2, 2, 1, 0] and [-2, 2, 0, 1], we first need to find the projection of 9e_1 onto each of the basis vectors of the subspace. Let u = [2, 2, 1, 0] and v = [-2, 2, 0, 1]. The vector 9e_1 is [9, 0, 0, 0].\n\nThe projection of 9e_1 onto u is given by the formula:\n\nproj_u(9e_1) = (9e_1 · u) / (u · u) * u\n\nCalculating the dot products:\n\n9e_1 · u = (9 * 2) + (0 * 2) + (0 * 1) + (0 * 0) = 18\nu · u = (2 * 2) + (2 * 2) + (1 * 1) + (0 * 0) = 9\n\nSo, the projection of 9e_1 onto u is:\n\nproj_u(9e_1) = (18 / 9) * [2, 2, 1, 0] = [4, 4, 2, 0]\n\nSimilarly, the projection of 9e_1 onto v is given by the formula:\n\nproj_v(9e_1) = (9e_1 · v) / (v · v) * v\n\nCalculating the dot products:\n\n9e_1 · v = (9 * -2) + (0 * 2) + (0 * 0) + (0 * 1) = -18\nv · v = (-2 * -2) + (2 * 2) + (0 * 0) + (1 * 1) = 9\n\nSo, the projection of 9e_1 onto v is:\n\nproj_v(9e_1) = (-18 / 9) * [-2, 2, 0, 1] = [-4, 4, 0, -2]\n\nNow, we can find the orthogonal projection of 9e_1 onto the subspace by adding the projections onto u and v:\n\north_proj(9e_1) = proj_u(9e_1) + proj_v(9e_1) = [4, 4, 2, 0] + [-4, 4, 0, -2] = [0, 8, 2, -2]\n\nTherefore, the answer is [0, 8, 2, -2].",
+        "gold_theorem_ids": "['18400', '12648']",
+        "gold_answer": "[8, 0, 2, -2]",
+        "gold_answer_type": "list of integer"
+    },
+    {
+        "id": "TheoremQA_xueguangma/taylors_approximation_theorem.json",
+        "problem": "Imagine you're trying to predict the temperature change in a chemical reaction over a very short time, starting from the moment the reaction begins. You have a formula that calculates the change in temperature based on the time elapsed (x) since the reaction started: \\frac{e^\\frac{x^4}{2}-\\cos(x^2)}{x^4}. As the time approaches zero seconds, you want to find out the rate at which the temperature change is happening. What is the rate of temperature change as the time approaches zero?",
+        "solution": "Using Taylor's Approximation Theorem to show: What is $\\lim_{x \\to 0} \\frac{e^\\frac{x^4}{2}-\\cos(x^2)}{x^4}$\nWe can use Taylor's Approximation Theorem to approximate $e^\\frac{x^4}{2}$ and $\\cos(x^2)$ as follows:\n$$e^\\frac{x^4}{2} \\approx 1 + \\frac{x^4}{2}$$\n$$\\cos(x^2) \\approx 1 - \\frac{x^4}{2}$$\nSubstituting these approximations into the given limit, we get:\n$$\\lim_{x \\to 0} \\frac{e^\\frac{x^4}{2}-\\cos(x^2)}{x^4} \\approx \\lim_{x \\to 0} \\frac{(1 + \\frac{x^4}{2}) - (1 - \\frac{x^4}{2})}{x^4}$$\nSimplifying the expression on the right-hand side, we get:\n$$\\lim_{x \\to 0} \\frac{(1 + \\frac{x^4}{2}) - (1 - \\frac{x^4}{2})}{x^4} = \\lim_{x \\to 0} \\frac{x^4}{x^4} = 1$$\nTherefore, the answer is 1.",
+        "gold_theorem_ids": "['9282', '9280']",
+        "gold_answer": "1.0",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_mingyin/cauchy-integral-theorem1.json",
+        "problem": "Imagine you're a scientist studying a special function f that is bounded and entire. You're analyzing how this signal interacts with two specific points on the radius-r ball. What is the value of the integral $\\int_{|z|=r} f(z)/(z-z_1)(z-z_2) dz$?",
+        "solution": "Let f be a bounded entire function, z_1,z_2 be two points in the ball B(0,r). What is the value of the integral $\\int_{|z|=r} f(z)/(z-z_1)(z-z_2) dz$?\nBy Cauchy's integral formula, we have $\\int_{|z|=r} \\frac{f(z)}{(z-z_1)(z-z_2)} dz = 2\\pi i \\left(\\frac{f(z_1)}{z_1-z_2} - \\frac{f(z_2)}{z_2-z_1}\\right)$. Therefore, the answer is $\\boxed{2\\pi i \\left(\\frac{f(z_1)}{z_1-z_2} - \\frac{f(z_2)}{z_2-z_1}\\right)}$.",
+        "gold_theorem_ids": "['16899']",
+        "gold_answer": "0.0",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Ramsey_4.json",
+        "problem": "Imagine you're organizing a tournament with teams from different cities, and each match can end in one of two outcomes: a win for the home team (marked with red) or a win for the visiting team (marked with blue). What is the minimum number of teams you need to invite to ensure that, no matter the outcomes, you will have either four teams where each team has won against each of the other three teams at home (a red quartet) or four teams where each has lost to each of the other three teams while visiting (a blue quartet)?",
+        "solution": "Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 4-clique in blue?\nThe answer is (c) 18. \n\nThis problem is related to Ramsey theory, which studies the conditions under which order must appear in a structure. In this case, we are interested in finding the smallest value of n such that any complete graph with n vertices and edges colored in 2 colors must contain a monochromatic 4-clique (a complete subgraph with 4 vertices and all edges of the same color).\n\nThe Ramsey number R(4,4) gives the smallest n such that any complete graph with n vertices and edges colored in 2 colors must contain a monochromatic 4-clique. It is known that R(4,4) = 18. Therefore, the answer is (c) 18.",
+        "gold_theorem_ids": "['20117', '7627']",
+        "gold_answer": "18",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/ODE3.json",
+        "problem": "Imagine you're programming a video game that simulates the flight of a magical bird. The bird's flight path is determined by a spell that affects its speed and direction. According to the spell, the change in the bird's acceleration, minus twice the change in its speed, plus twice its current position equals zero. At the start of the game (time = 0), the bird is at the starting point (position = 0). When the game clock reaches the halfway point of the first day (time = π/2 hours), the bird has reached a position of 1 unit above the starting point. What is the bird's position at a quarter of the way through the first day (time = π/4 hours)?",
+        "solution": "Find the solutions to the second order boundary-value problem. y''-2y'+2y=0, y(0)=0, y(\\pi/2) = 1. What is y(\\pi/4)?\nTo solve the given second order boundary-value problem, we first need to find the general solution of the homogeneous differential equation y'' - 2y' + 2y = 0. The characteristic equation for this differential equation is r^2 - 2r + 2 = 0. We can solve this quadratic equation to find the roots.\n\nUsing the quadratic formula, we have:\n\nr = (2 ± √(2^2 - 4 * 1 * 2)) / (2 * 1)\nr = (2 ± √(-4)) / 2\nr = 1 ± i\n\nSince we have complex roots, the general solution of the homogeneous differential equation is given by:\n\ny(x) = e^(rx) * (A * cos(x) + B * sin(x))\ny(x) = e^(x) * (A * cos(x) + B * sin(x))\n\nNow, we need to apply the boundary conditions to find the values of A and B.\n\n1. y(0) = 0:\n\n0 = e^(0) * (A * cos(0) + B * sin(0))\n0 = A\nA = 0\n\n2. y(π/2) = 1:\n\n1 = e^(π/2) * (0 * cos(π/2) + B * sin(π/2))\n1 = e^(π/2) * B\nB = e^(-π/2)\n\nSo, the particular solution is:\n\ny(x) = e^(x) * (0 * cos(x) + e^(-π/2) * sin(x))\ny(x) = e^(x - π/2) * sin(x)\n\nNow, we can find y(π/4):\n\ny(π/4) = e^(π/4 - π/2) * sin(π/4)\ny(π/4) = e^(-π/4) * (√2 / 2)\n\nTherefore, the answer is e^(-π/4) * (√2 / 2).",
+        "gold_theorem_ids": "['5197', '5201', '8264']",
+        "gold_answer": "0.322",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/t_test1.json",
+        "problem": "A new type of bean was grown in 10 different fields, and its productivity was measured to see if it meets the expected yield of 12.0 quintals per hectare. The yields from these fields were as follows: 14.3, 12.6, 13.7, 10.9, 13.7, 12.0, 11.4, 12.0, 12.6, 13.1 quintals per hectare. Given that we're using a 5% significance level, does the actual yield support the expected yield?",
+        "solution": "Based on field experiments, a new variety green gram is expected to given an yield of 12.0 quintals per hectare. The variety was tested on 10 randomly selected farmers fields. The yield ( quintals/hectare) were recorded as 14.3,12.6,13.7,10.9,13.7,12.0,11.4,12.0,12.6,13.1. Do the results conform the expectation with Level of significance being 5%?\nTo determine if the results conform to the expectation with a level of significance of 5%, we will perform a one-sample t-test. The null hypothesis (H0) is that the mean yield is equal to the expected yield of 12.0 quintals per hectare. The alternative hypothesis (H1) is that the mean yield is not equal to 12.0 quintals per hectare.\n\nFirst, we need to calculate the mean and standard deviation of the sample data:\n\nMean (x̄) = (14.3 + 12.6 + 13.7 + 10.9 + 13.7 + 12.0 + 11.4 + 12.0 + 12.6 + 13.1) / 10 = 126.3 / 10 = 12.63\n\nNow, we calculate the standard deviation (s):\n\ns = sqrt(Σ(xi - x̄)^2 / (n - 1))\ns = sqrt((1.7^2 + 0.6^2 + 1.1^2 + (-1.73)^2 + 1.1^2 + (-0.63)^2 + (-1.23)^2 + (-0.63)^2 + 0.6^2 + 0.47^2) / 9)\ns ≈ 0.97\n\nNext, we calculate the t-value:\n\nt = (x̄ - μ) / (s / sqrt(n))\nt = (12.63 - 12) / (0.97 / sqrt(10))\nt ≈ 2.05\n\nNow, we need to find the critical t-value for a two-tailed t-test with a 5% level of significance and 9 degrees of freedom (n - 1 = 10 - 1 = 9). Using a t-table or calculator, we find the critical t-value to be approximately ±2.262.\n\nSince the calculated t-value (2.05) is less than the critical t-value (2.262), we fail to reject the null hypothesis.\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['9320', '4138']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Ramsey_2.json",
+        "problem": "Everyone that you invite to a party will be either a fan of football or a fan of basketball, but never both. What is the smallest number of guests you need to invite to ensure that there are either 3 people who are all fans of football or 3 people who are all fans of basketball?",
+        "solution": "What is the minimum number of people needed in a room to guarantee that there are 3 mutual friends or 3 mutual strangers?\nThe minimum number of people needed in a room to guarantee that there are 3 mutual friends or 3 mutual strangers is 6. Therefore, the answer is 6.",
+        "gold_theorem_ids": "['20117', '7627']",
+        "gold_answer": "6",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/viterbi2.json",
+        "problem": "Imagine you're analyzing data from a remote weather station that can only send binary signals: a signal for 'umbrella' when the observer decides to carry an umbrella, and a signal for 'no umbrella' when they don't. The weather at this location can either be rainy or sunny. Historical data shows that there's a 60% chance of rain and a 40% chance of sunshine on any given day. Additionally, the weather pattern is such that if it's rainy (or sunny) today, there's a 70% chance it will be the same tomorrow. The observer has a habit of carrying an umbrella 60% of the time when it's rainy, and 40% of the time when it's sunny. Over three days, the signals received were: 'umbrella', 'no umbrella', 'umbrella'. Based on this information, what was the most likely weather pattern over these three days? Represent rainy days as 1 and sunny days as 0.",
+        "solution": "Assuming we are underground, and the only thing we can observe is whether a person brings an umbrella or not. The weather could be either rainy or sunny. Assuming the P(rain)=0.6 and P(sunny)=0.4. Assuming the weather on day $k$ is dependent on the weather on day $k-1$. We can write the transition probability as P(sunny $\\mid$ sunny) = P(rain $\\mid$ rain) = 0.7. The person has 60\\% chance to bring an umbrella when the weather is rainy, and 40\\% chance to bring an umbrella when the weather is sunny, i.e. P(umbrella $\\mid$ rain) = 0.6 and P(umbrella $\\mid$ sunny) = 0.4. If we observe that the person (1) brought an umbrella on day 1, (2) did not bring an umbrella on day 2, (3) brought an umbrella on day 3.  What are the most likely weather from day 1 to day 3? Return the answer as a list of binary values, where 1 represents rain and 0 represents sunny.\nTo find the most likely weather from day 1 to day 3, we can use the Hidden Markov Model (HMM) and the Viterbi algorithm. Let's denote the weather states as R (rain) and S (sunny), and the observations as U (umbrella) and N (no umbrella). The given transition probabilities are:\n\nP(S|S) = P(R|R) = 0.7\nP(R|S) = P(S|R) = 0.3\n\nThe given emission probabilities are:\n\nP(U|R) = 0.6\nP(U|S) = 0.4\nP(N|R) = 0.4\nP(N|S) = 0.6\n\nThe observations are: U, N, U.\n\nNow, we can use the Viterbi algorithm to find the most likely sequence of weather states:\n\n1. Initialize the probabilities for the first day:\nP(R|U) = P(U|R) * P(R) = 0.6 * 0.6 = 0.36\nP(S|U) = P(U|S) * P(S) = 0.4 * 0.4 = 0.16\n\n2. Calculate the probabilities for the second day:\nP(R|N) = max(P(N|R) * P(R|R) * P(R|U), P(N|R) * P(S|R) * P(S|U)) = max(0.4 * 0.7 * 0.36, 0.4 * 0.3 * 0.16) = 0.1008\nP(S|N) = max(P(N|S) * P(S|S) * P(S|U), P(N|S) * P(R|S) * P(R|U)) = max(0.6 * 0.7 * 0.16, 0.6 * 0.3 * 0.36) = 0.0756\n\n3. Calculate the probabilities for the third day:\nP(R|U) = max(P(U|R) * P(R|R) * P(R|N), P(U|R) * P(S|R) * P(S|N)) = max(0.6 * 0.7 * 0.1008, 0.6 * 0.3 * 0.0756) = 0.042336\nP(S|U) = max(P(U|S) * P(S|S) * P(S|N), P(U|S) * P(R|S) * P(R|N)) = max(0.4 * 0.7 * 0.0756, 0.4 * 0.3 * 0.1008) = 0.021168\n\nThe most likely sequence of weather states is the one with the highest probabilities at each step: R, R, R. Therefore, the answer is [1, 1, 1].",
+        "gold_theorem_ids": "['5461']",
+        "gold_answer": "[1, 1, 1]",
+        "gold_answer_type": "list of integer"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_3_2.json",
+        "problem": "Imagine you're a graphic designer working on a 3D modeling project. You have three arrows: the first points 1 unit right, 2 units up, and 3 units forward; the second points 4 units right, 5 units up, and 6 units forward; and the third points 7 units right, 8 units up, and 9 units forward. You can combine arrows by adding any multiple of their right, up, and forward displacements (linear combinations). Can you create a new arrow using a combination of these three without directly tracing any of them?",
+        "solution": "Are the vectors v_1 = [1,2,3], v_2 = [4,5,6], v_3 = [7,8,9] linearly independent?\nTo determine if the vectors v_1 = [1,2,3], v_2 = [4,5,6], and v_3 = [7,8,9] are linearly independent, we can set up a linear combination of these vectors and see if the only solution is the trivial solution (all coefficients are zero).\n\nLet's set up the linear combination:\n\nc_1 * v_1 + c_2 * v_2 + c_3 * v_3 = [0, 0, 0]\n\nwhere c_1, c_2, and c_3 are scalar coefficients.\n\nSubstituting the vectors, we get:\n\nc_1 * [1, 2, 3] + c_2 * [4, 5, 6] + c_3 * [7, 8, 9] = [0, 0, 0]\n\nThis can be written as a system of linear equations:\n\nc_1 + 4c_2 + 7c_3 = 0\n2c_1 + 5c_2 + 8c_3 = 0\n3c_1 + 6c_2 + 9c_3 = 0\n\nWe can solve this system of equations using Gaussian elimination or any other method. However, we can also notice that the third equation is just the sum of the first two equations, which means that the system is linearly dependent.\n\nTherefore, the answer is False.",
+        "gold_theorem_ids": "['20819', '20859', '12693']",
+        "gold_answer": "False",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_calculus_12.json",
+        "problem": "Imagine launching a toy rocket straight up into the sky, and its path through the air can be tracked with a formula based on time since launch. The formula for its flight path is given by the equation where the height of the rocket at any time 't' (in seconds) is determined by $h=200t - 4.9t^{2}$, while the horizontal distance at any time 't' is determined by 'd=80t'. How high does the rocket go at its highest point before it starts to come back down?",
+        "solution": "A model rocket follows the trajectory c(t) = (80t, 200t - 4.9t^2) until it hits the ground, with t in seconds and distance in meters. Find the rocket's maximum height in meters.\nTo find the rocket's maximum height, we need to find the maximum value of the y-coordinate of its trajectory. The y-coordinate is given by 200t - 4.9t^2. To find the maximum value of this expression, we can take its derivative with respect to t and set it equal to zero:\n\nd/dt (200t - 4.9t^2) = 200 - 9.8t = 0\n\nSolving for t, we get t = 20.41 seconds. \n\nSubstituting this value of t back into the y-coordinate expression, we get:\n\n200(20.41) - 4.9(20.41)^2 = 2041 meters\n\nTherefore, the answer is 2041 meters.",
+        "gold_theorem_ids": "['15210']",
+        "gold_answer": "2041",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_elainewan/econ_micro_7.json",
+        "problem": "Alice has $1,000,000 and is considering betting $100,000 on a coin flip where she doubles her bet if she wins. Given that Alice evaluates her decisions based on how the outcome would affect her happiness on a logarithmic utility of weath function, what is the minimum chance of winning she must assign to the coin flip to justify her bet?",
+        "solution": "George is seen to place an even-money $100,000 bet on the Bulls to win the NBA Finals. If George has a logarithmic utility-of-wealth function and if his current wealth is $1,000,000, what must he believe is the minimum probability that the Bulls will win?\nLet's denote George's wealth as W, the bet amount as B, and the probability of the Bulls winning as p. We are given that W = $1,000,000 and B = $100,000. Since it's an even-money bet, if the Bulls win, George's wealth will be W + B, and if they lose, it will be W - B.\n\nGeorge's logarithmic utility function is U(W) = ln(W). To find the minimum probability p that George believes the Bulls will win, we need to equate his expected utility from betting to his utility from not betting.\n\nExpected utility from betting:\nE[U(W)] = p * ln(W + B) + (1 - p) * ln(W - B)\n\nUtility from not betting:\nU(W) = ln(W)\n\nNow, we need to solve for p:\n\np * ln(W + B) + (1 - p) * ln(W - B) = ln(W)\n\nSubstitute the given values of W and B:\n\np * ln(1,000,000 + 100,000) + (1 - p) * ln(1,000,000 - 100,000) = ln(1,000,000)\n\np * ln(1,100,000) + (1 - p) * ln(900,000) = ln(1,000,000)\n\nNow, we can solve for p:\n\np ≈ 0.526\n\nTherefore, the answer is 0.526.",
+        "gold_theorem_ids": "['7665']",
+        "gold_answer": "0.525",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_xinyi/dag_2.json",
+        "problem": "Imagine you have a family tree that shows the lineage from ancestors to their descendants, with arrows pointing from parents to children. Can this family tree, with its directed lineage paths, be accurately represented without the arrows while still maintaining the correct relationships? True or false?",
+        "solution": "A distribution represented by a directed tree can be written as an equivalent distribution over the corresponding undirected tree. True or false?\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['3778', '23699', '21475']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/t_test2.json",
+        "problem": "In a clinical trial, two groups of patients are being compared. The first group, consisting of 5 patients, received Treatment A and had weights of 42, 39, 38, 60, and 41 kilograms. The second group, with 7 patients, received Treatment B and had weights of 38, 42, 56, 64, 68, 69, and 62 kilograms. Researchers want to know if the weight differences between the two groups of patients indicate that one treatment is more effective than the other, with a confidence level of 95%. Is there a significant weight difference between the two treatment groups?",
+        "solution": "A group of 5 patients treated with medicine. A is of weight 42,39,38,60 &41 kgs. Second group of 7 patients from the same hospital treated with medicine B is of weight 38, 42, 56, 64, 68, 69, & 62 kgs. Is there any difference between medicines under significance level of 5%?\nTo determine if there is a significant difference between the two groups of patients treated with medicine A and B, we can perform a two-sample t-test. The null hypothesis (H0) is that there is no significant difference between the two groups, while the alternative hypothesis (H1) is that there is a significant difference.\n\nFirst, let's calculate the mean and standard deviation for each group:\n\nGroup A:\nWeights: [42, 39, 38, 60, 41]\nMean (µA) = (42 + 39 + 38 + 60 + 41) / 5 = 220 / 5 = 44\nStandard Deviation (σA) = √[(Σ(x - µA)^2) / (nA - 1)] = √[(2^2 + 5^2 + 6^2 + 16^2 + 3^2) / 4] = √(4 + 25 + 36 + 256 + 9) / 4 = √330 / 4 = √82.5 ≈ 9.08\n\nGroup B:\nWeights: [38, 42, 56, 64, 68, 69, 62]\nMean (µB) = (38 + 42 + 56 + 64 + 68 + 69 + 62) / 7 = 399 / 7 = 57\nStandard Deviation (σB) = √[(Σ(x - µB)^2) / (nB - 1)] = √[(19^2 + 15^2 + 1^2 + 7^2 + 11^2 + 12^2 + 5^2) / 6] = √(361 + 225 + 1 + 49 + 121 + 144 + 25) / 6 = √926 / 6 ≈ 12.45\n\nNow, we can calculate the t-statistic:\n\nt = (µA - µB) / √[(σA^2 / nA) + (σB^2 / nB)] = (44 - 57) / √[(9.08^2 / 5) + (12.45^2 / 7)] = -13 / √[(82.5 / 5) + (155.0 / 7)] ≈ -13 / 6.63 ≈ -1.96\n\nNext, we need to find the critical t-value for a two-tailed t-test with a significance level of 5% (α = 0.05) and degrees of freedom (df) = nA + nB - 2 = 5 + 7 - 2 = 10. Using a t-distribution table or calculator, we find the critical t-value to be approximately ±2.228.\n\nSince the calculated t-statistic (-1.96) is within the range of the critical t-values (-2.228 to 2.228), we fail to reject the null hypothesis. Therefore, there is no significant difference between the two groups of patients treated with medicine A and B at a 5% significance level.",
+        "gold_theorem_ids": "['9320', '4138']",
+        "gold_answer": "False",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Stirling_number_second_kind_3.json",
+        "problem": "Imagine you're organizing a workshop and you have 10 enthusiastic participants. You want to split them into 3 different project teams for group activities. Each team must have at least one participant. In how many unique ways can you form these teams?",
+        "solution": "In how many ways can a group of 10 people be divided into 3 non-empty subsets?\nWe can approach this problem using the concept of Stirling numbers of the second kind. The Stirling number of the second kind, denoted by S(n, k), represents the number of ways to partition a set of n objects into k non-empty subsets. \n\nTherefore, the answer to the given question is the Stirling number of the second kind S(10, 3), which is equal to 9330. \n\nTherefore, the answer is 9330.",
+        "gold_theorem_ids": "['17948', '16950', '17363', '8903']",
+        "gold_answer": "9330",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/Rolle's_theorem.json",
+        "problem": "Imagine you're programming a new video game that involves a magical landscape where the terrain's elevation at any point is determined by a formula based on the distance from a certain landmark. Specifically, the elevation is given by the square of the distance times the sine of the distance. You're tasked with creating a smooth path between two points on this landscape, both of which are exactly the same elevation, located 10pi and 11pi units away from the landmark, respectively. Is it guaranteed that there will be a point between these two locations where the path is perfectly flat, meaning the slope of the path is zero?",
+        "solution": "for a given function f(x)=x^2*sin(x). Is there a value $x$ between 10pi and 11pi such that $f'(x) = 0$?\nTo determine if there is a value of $x$ between $10\\pi$ and $11\\pi$ such that $f'(x) = 0$, we first need to find the derivative of the given function $f(x) = x^2\\sin(x)$. \n\nUsing the product rule, we have:\n\n$f'(x) = (x^2)'\\sin(x) + x^2(\\sin(x))'$\n\n$f'(x) = 2x\\sin(x) + x^2\\cos(x)$\n\nNow, we need to find if there is a value of $x$ in the given interval such that $f'(x) = 0$. \n\nSince $\\sin(x)$ and $\\cos(x)$ are continuous and periodic functions, there will always be a value of $x$ in any interval of length $2\\pi$ such that $\\sin(x) = 0$ or $\\cos(x) = 0$. In the interval between $10\\pi$ and $11\\pi$, we have:\n\n$10\\pi < x < 11\\pi$\n\nFor $\\sin(x) = 0$, we have $x = n\\pi$, where $n$ is an integer. In this interval, we have $n = 10, 11$. For $n = 10$, we have $x = 10\\pi$, and for $n = 11$, we have $x = 11\\pi$. Since these values are at the endpoints of the interval, we need to check for $\\cos(x) = 0$.\n\nFor $\\cos(x) = 0$, we have $x = (2n + 1)\\frac{\\pi}{2}$, where $n$ is an integer. In this interval, we have $n = 15$. For $n = 15$, we have $x = 31\\frac{\\pi}{2}$, which is between $10\\pi$ and $11\\pi$.\n\nNow, we need to check if $f'(x) = 0$ for this value of $x$. Plugging $x = 31\\frac{\\pi}{2}$ into the derivative, we get:\n\n$f'(31\\frac{\\pi}{2}) = 2(31\\frac{\\pi}{2})\\sin(31\\frac{\\pi}{2}) + (31\\frac{\\pi}{2})^2\\cos(31\\frac{\\pi}{2})$\n\nSince $\\sin(31\\frac{\\pi}{2}) = 0$ and $\\cos(31\\frac{\\pi}{2}) \\neq 0$, we have:\n\n$f'(31\\frac{\\pi}{2}) = 0$\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['20759', '10794']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Catalan_2.json",
+        "problem": "Imagine you're creating a path in a video game from the bottom left corner of a 10x10 square grid to the top right corner. You can only move either one step to the right or one step upwards in each move. However, your path cannot cross over the diagonal line that runs from the bottom left to the top right corner of the grid. How many different paths can you create that follow these rules?",
+        "solution": "How many paths are there from the origin (0,0) to the point (10,10) on a grid such that the path only moves up or right and does not cross the diagonal line y = x?\nThis problem can be solved using the Catalan numbers. The answer is the 10th Catalan number, which is 16796. Therefore, the answer is 16796.",
+        "gold_theorem_ids": "['17913']",
+        "gold_answer": "16796",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/cauchy_integral1.json",
+        "problem": "Imagine you're a scientist studying a particular type of energy field that exists in a circular region with a radius of 2 units. You've discovered that the strength of this energy field at any point can be described by a formula based on the distance from the center of the circle. You're interested in calculating the total change in energy as you move along a path that forms a perfect circle around the center, 2 units away. What is the total change in energy you would measure?",
+        "solution": "Evaluate $\\int_c z^2 / (z - 5) dz$, where c is the circle that $|z| = 2$.\nWe can evaluate this integral using Cauchy's Integral Formula. Let $f(z) = z^2$ and $z_0 = 5$. Then, by Cauchy's Integral Formula, we have:\n\n$$\\int_c \\frac{f(z)}{z - z_0} dz = 2\\pi i f(z_0) = 2\\pi i (5)^2 = 50\\pi i$$\n\nHowever, this formula only applies when the circle $c$ encloses the point $z_0$. In this case, the circle $|z| = 2$ does not enclose the point $z_0 = 5$. Therefore, by Cauchy's Integral Theorem, the integral is equal to $0$.\n\nTherefore, the answer is 0.",
+        "gold_theorem_ids": "['16899']",
+        "gold_answer": "0",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Multinomial_2.json",
+        "problem": "Imagine you're organizing a small local sports league with 9 players and decide to create 3 teams, each team having exactly 3 players. Assuming each team is equal in status and the only difference is the roster, how many different ways can you form these teams?",
+        "solution": "A group of 9 people is split into 3 committees of 3 people. Committees are identical besides of members. In how many ways can this be done?\nWe can first choose 3 people out of 9 in $\\binom{9}{3}$ ways for the first committee. Then, we can choose 3 people out of the remaining 6 in $\\binom{6}{3}$ ways for the second committee. Finally, the last 3 people will form the third committee. However, since the order of choosing the committees does not matter, we need to divide the result by the number of ways to arrange the 3 committees, which is $3!$. Therefore, the total number of ways to split the group of 9 people into 3 committees of 3 people is:\n\n$$\\frac{\\binom{9}{3} \\cdot \\binom{6}{3}}{3!} = \\frac{84 \\cdot 20}{6} = 280$$\n\nTherefore, the answer is 280.",
+        "gold_theorem_ids": "['10463', '10462']",
+        "gold_answer": "280",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/kepler's_law1.json",
+        "problem": "Imagine two trains, Train A and Train B, are traveling on separate circular tracks around two different cities. Train A completes its journey around City A, which has a circular boundary with a radius of 1.22x10^9 meters, in exactly 15.95 days. Train B travels around City B, which has a larger circular boundary with a radius of 1.48x10^9 meters. Assuming the relationship between the time it takes to travel around each city and the size of the city is the same as the relationship between the orbital periods of moons and their distances from their planet, estimate how long it takes Train B to complete its journey around City B.",
+        "solution": "Titan, the largest moon of Saturn, has a mean orbital radius of 1.22x10^9 m. The orbital period of Titan is 15.95 days. Hyperion, another moon of Saturn, orbits at a mean radius of 1.48x10^9 m. Use Kepler's third law of planetary motion to predict the orbital period of Hyperion in days.\nKepler's third law states that the ratio of the squares of the periods of any two planets is equal to the ratio of the cubes of the semi-major axes of their orbits. In this case, we have two moons of Saturn, Titan and Hyperion. Let T1 and T2 be the orbital periods of Titan and Hyperion, respectively, and R1 and R2 be their mean orbital radii.\n\nAccording to Kepler's third law:\n\n(T1^2 / T2^2) = (R1^3 / R2^3)\n\nWe are given T1 = 15.95 days, R1 = 1.22x10^9 m, and R2 = 1.48x10^9 m. We need to find T2.\n\nRearranging the equation to solve for T2:\n\nT2^2 = (T1^2 * R2^3) / R1^3\n\nT2 = sqrt((T1^2 * R2^3) / R1^3)\n\nNow, plug in the given values:\n\nT2 = sqrt((15.95^2 * (1.48x10^9)^3) / (1.22x10^9)^3)\n\nT2 ≈ 21.28 days\n\nTherefore, the answer is 21.28.",
+        "gold_theorem_ids": "['11654']",
+        "gold_answer": "21.3",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/pigeonhole_4.json",
+        "problem": "Imagine you're organizing a massive event that will be attended by 1000 guests. Given that there are only 365 days in a year, what is the minimum number of guests who must have been born on the same day of the year?",
+        "solution": "In a group of 1000 people, at least how many people have to share the same birthday?\nUsing the Pigeonhole Principle, we can determine the minimum number of people who must share the same birthday. In this case, the \"pigeons\" are the 1000 people, and the \"holes\" are the 365 possible birthdays (ignoring leap years). To ensure that at least one hole (birthday) has more than one pigeon (person), we can divide the number of pigeons by the number of holes and round up to the nearest whole number.\n\n1000 / 365 ≈ 2.74, which rounds up to 3.\n\nTherefore, the answer is 3.",
+        "gold_theorem_ids": "['13467', '18695']",
+        "gold_answer": "3",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Stirling_number_second_kind_5.json",
+        "problem": "Imagine you have a collection of 6 unique stickers. You want to divide them into two albums, but each album must have at least 2 stickers. How many different ways can you organize your stickers across these two albums?",
+        "solution": "In how many ways can a set of 6 distinct letters be partitioned into 2 non-empty groups if each group must contain at least 2 letters?\nTo partition a set of 6 distinct letters into 2 non-empty groups with each group containing at least 2 letters, we can have the following possible group sizes: (2, 4) and (3, 3).\n\nFor the (2, 4) partition, we have 6 letters to choose from for the first group, so there are 6 choose 2 ways to form the first group. Then, the remaining 4 letters will form the second group. So, there are C(6, 2) = 15 ways to form the (2, 4) partition.\n\nFor the (3, 3) partition, we have 6 letters to choose from for the first group, so there are 6 choose 3 ways to form the first group. Then, the remaining 3 letters will form the second group. However, since the two groups are indistinguishable, we need to divide by 2 to avoid double-counting. So, there are C(6, 3) / 2 = 10 ways to form the (3, 3) partition.\n\nTherefore, the answer is 15 + 10 = 25.",
+        "gold_theorem_ids": "['8903']",
+        "gold_answer": "25",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_xinyi/dag_3.json",
+        "problem": "Imagine you have a family tree of 100 members, and you're trying to figure out how many ways you can assign one person to be the 'ancestor' such that the family tree still makes sense with everyone else coming after them in the lineage. How many different ways can you do this?",
+        "solution": "How many distinct directed trees can be constructed from a undirected tree with 100 nodes?\nLet T be an undirected tree with 100 nodes. Any directed tree that can be constructed from T must have exactly one root, which can be any of the 100 nodes of T. Once the root is chosen, the edges of T can be oriented in exactly one way to form a directed tree rooted at the chosen node. Therefore, the number of distinct directed trees that can be constructed from T is simply 100, the number of possible choices for the root.\n\nTherefore, the answer is 100.",
+        "gold_theorem_ids": "['23699']",
+        "gold_answer": "100",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Graph_2.json",
+        "problem": "Imagine you're organizing a network of 6 computers in an office. Each computer needs to be connected in such a way that there is exactly one path between any two computers to ensure efficient data transfer without any loops. How many different ways can you set up this network?",
+        "solution": "How many labeled trees are there on 6 vertices?\nCayley's formula states that the number of labeled trees on n vertices is n^(n-2). In this case, n = 6, so the number of labeled trees on 6 vertices is 6^(6-2) = 6^4 = 1296. Therefore, the answer is 1296.",
+        "gold_theorem_ids": "['16790', '17301']",
+        "gold_answer": "1296",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Multinomial_1.json",
+        "problem": "Imagine you're organizing a school project and you have 10 students to divide into 3 project teams with specific roles. The first team needs 3 students to research, the second team requires 4 students to create the presentation, and the third team also needs 3 students to handle the project documentation. In how many different ways can you assign the students to these teams?",
+        "solution": "A group of 10 people is split into 3 different committees of 3, 4, and 3 people, respectively. In how many ways can this be done?\nTo split the group of 10 people into committees of 3, 4, and 3 people, we can use the combination formula, which is C(n, k) = n! / (k!(n-k)!), where n is the total number of people and k is the number of people in the committee.\n\nFirst, we need to choose 3 people out of 10 for the first committee. This can be done in C(10, 3) ways.\n\nNext, we need to choose 4 people out of the remaining 7 for the second committee. This can be done in C(7, 4) ways.\n\nFinally, the last 3 people will automatically form the third committee.\n\nSo, the total number of ways to split the group is C(10, 3) * C(7, 4).\n\nC(10, 3) = 10! / (3!(10-3)!) = 10! / (3!7!) = 120\nC(7, 4) = 7! / (4!(7-4)!) = 7! / (4!3!) = 35\n\nTherefore, the answer is 120 * 35 = 4200.",
+        "gold_theorem_ids": "['10463', '10462', '19708']",
+        "gold_answer": "4200",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Cayley_3.json",
+        "problem": "Imagine you're organizing a network of 5 computers, each computer being a point in the network. You want to connect these computers in a way that every computer is connected to the network but without creating any loops, essentially forming a direct or indirect path between any two computers. How many different ways can you organize this network?",
+        "solution": "How many trees are there on 5 labeled vertices?\nTo find the number of trees on 5 labeled vertices, we can use Cayley's formula, which states that the number of trees on n labeled vertices is n^(n-2). In this case, n = 5, so the formula becomes 5^(5-2) = 5^3 = 125. Therefore, the answer is 125.",
+        "gold_theorem_ids": "['16790']",
+        "gold_answer": "125",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/trapezoidal_rule3.json",
+        "problem": "Imagine you're a landscape architect planning a new park and need to calculate the amount of soil needed to create a specific land feature. The feature's cross-section can be described by the equation y=2^{x}, and you're looking at the section from x=-1 to x=3. To estimate the volume of soil needed, you decide to break this section into 4 equal parts and use a method that approximates the area by connecting the dots with straight lines to form trapezoids. How much area would you estimate is under the curve for this section?",
+        "solution": "Approximate the area under the curve y=2^{x} between x=-1 and x=3 using the Trapezoidal rule with n=4 subintervals.\nTo approximate the area under the curve y=2^x between x=-1 and x=3 using the Trapezoidal rule with n=4 subintervals, we first need to find the width of each subinterval. The width (h) can be calculated as:\n\nh = (b - a) / n\nh = (3 - (-1)) / 4\nh = 4 / 4\nh = 1\n\nNow, we need to evaluate the function at each of the subinterval endpoints:\n\ny(-1) = 2^(-1) = 0.5\ny(0) = 2^(0) = 1\ny(1) = 2^(1) = 2\ny(2) = 2^(2) = 4\ny(3) = 2^(3) = 8\n\nNext, we apply the Trapezoidal rule formula:\n\nArea ≈ (h/2) * [y(a) + 2 * (y(a+h) + y(a+2h) + ... + y(a+(n-1)h)) + y(b)]\nArea ≈ (1/2) * [0.5 + 2 * (1 + 2 + 4) + 8]\nArea ≈ (1/2) * [0.5 + 2 * 7 + 8]\nArea ≈ (1/2) * [0.5 + 14 + 8]\nArea ≈ (1/2) * 22.5\nArea ≈ 11.25\n\nTherefore, the answer is 11.25.",
+        "gold_theorem_ids": "['17471']",
+        "gold_answer": "11.25",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_calculus_3_8.json",
+        "problem": "Imagine a drone flying in a perfect circle with a radius of 50 meters above a large, open field. The drone's control system tracks its position using a coordinate system where the center of the circle is the origin. At a certain moment, the drone is moving horizontally (along the x-axis) towards the left at a speed of 1.25 meters per second, and its current position is marked at coordinates (40, 30) meters. Given this scenario, calculate the rate at which the drone's vertical position (along the y-axis) is changing at that moment.",
+        "solution": "Julian is jogging around a circular track of radius 50 m. In a coordinate system with its origin at the center of the track, Julian's x-coordinate is changing at a rate of -1.25 m/s when his coordinates are (40, 30). Find dy/dt at this moment.\nTo find dy/dt, we can use the chain rule and the equation of the circle. The equation of the circle with radius 50 m is:\n\nx^2 + y^2 = 50^2\n\nDifferentiating both sides with respect to time t, we get:\n\n2x(dx/dt) + 2y(dy/dt) = 0\n\nWe are given that dx/dt = -1.25 m/s and Julian's coordinates at this moment are (40, 30). Plugging these values into the equation, we get:\n\n2(40)(-1.25) + 2(30)(dy/dt) = 0\n\nSolving for dy/dt, we have:\n\n-100 + 60(dy/dt) = 0\n\n60(dy/dt) = 100\n\ndy/dt = 100/60\n\ndy/dt = 5/3\n\nTherefore, the answer is 5/3.",
+        "gold_theorem_ids": "['15210']",
+        "gold_answer": "1.667",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Binomial_5.json",
+        "problem": "Imagine you're organizing a small project team at work, and you need to pick a mix of team members from two departments. You have 6 marketing specialists and 8 product designers. If the team needs to consist of 2 marketing specialists and 3 product designers, how many different teams can you form?",
+        "solution": "In how many ways can a committee of 2 men and 3 women be selected from a group of 6 men and 8 women?\nTo form a committee of 2 men and 3 women, we need to select 2 men from the 6 men and 3 women from the 8 women. We can use the combination formula to calculate the number of ways to do this.\n\nThe number of ways to select 2 men from 6 men is C(6, 2) = 6! / (2! * (6-2)!) = 15.\nThe number of ways to select 3 women from 8 women is C(8, 3) = 8! / (3! * (8-3)!) = 56.\n\nNow, we need to multiply these two values to get the total number of ways to form the committee: 15 * 56 = 840.\n\nTherefore, the answer is 840.",
+        "gold_theorem_ids": "['13011', '19708']",
+        "gold_answer": "840",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Multinomial_4.json",
+        "problem": "Imagine you're creating a unique code for a special online discount. The code is 7 characters long and must be made using the numbers 1, 2 (twice), 3 (four times). How many different codes can you create ensuring each code uses all the numbers exactly as specified?",
+        "solution": "In how many ways can we form a 7-digit number using the digits 1, 2, 2, 3, 3, 3, 3?\nWe have 7 digits to form a 7-digit number, with the digits 1, 2, 2, 3, 3, 3, and 3. To find the number of ways to form the 7-digit number, we can use the formula for permutations with repetitions:\n\nn! / (n1! * n2! * ... * nk!)\n\nwhere n is the total number of digits, and n1, n2, ..., nk are the number of repetitions of each digit.\n\nIn this case, n = 7, n1 (for digit 1) = 1, n2 (for digit 2) = 2, and n3 (for digit 3) = 4. Plugging these values into the formula, we get:\n\n7! / (1! * 2! * 4!) = 5040 / (1 * 2 * 24) = 105\n\nTherefore, the answer is 105.",
+        "gold_theorem_ids": "['10463', '10462']",
+        "gold_answer": "105",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_panlu/similarity3.json",
+        "problem": "In a drawing competition, two teams are asked to draw two different shapes, Team A draws a five-sided figure (pentagon) and Team B draws another five-sided figure. Both figures have the same shape but different sizes. Team A's figure has sides of lengths 8, 8, 4, 4, and 6 units, with two sides being equal to each other in pairs. Team B's figure has two sides of length 3 units each and another two sides of equal length, but the exact measurement isn't given. If the figures are considered to have the same proportions, what is the total length of the sides of Team A's figure?",
+        "solution": "If polygon ABCDE ~ polygon PQRST, AB = BC = 8, AE = CD = 4, ED = 6, QR = QP, and RS = PT = 3, find the perimeter of polygon ABCDE.\nSince polygon ABCDE is similar to polygon PQRST, their corresponding sides are proportional. Let's set up the proportion:\n\nAB/PQ = BC/QR = CD/RS = AE/ST = ED/PT\n\nWe are given that AB = BC = 8, AE = CD = 4, and ED = 6. We are also given that QR = QP and RS = PT = 3. We can now set up the proportion for each pair of corresponding sides:\n\n8/PQ = 8/QR = 4/RS = 4/ST = 6/PT\n\nSince QR = QP, we can replace QR with PQ in the second proportion:\n\n8/PQ = 8/PQ = 4/RS = 4/ST = 6/PT\n\nNow, we can solve for PQ:\n\n8/PQ = 8/PQ\nPQ = 8\n\nSince RS = PT = 3, we can replace RS and PT in the proportion:\n\n8/8 = 4/3 = 4/ST = 6/3\n\nNow, we can solve for ST:\n\n4/ST = 4/3\nST = 3\n\nNow that we have the lengths of the corresponding sides of polygon PQRST, we can find the perimeter of polygon ABCDE:\n\nPerimeter of ABCDE = AB + BC + CD + AE + ED = 8 + 8 + 4 + 4 + 6 = 30\n\nTherefore, the answer is 30.",
+        "gold_theorem_ids": "['14371']",
+        "gold_answer": "30",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/t_test3.json",
+        "problem": "A farmer is comparing the productivity of two different types of rubber trees on his farm. He collects samples of rubber from 16 trees of Type 1 and 12 trees of Type 2. He wants to know if there's a significant difference in the average rubber production between the two types of trees. The rubber production (in kilograms) for Type 1 trees are: 6.21, 5.70, 6.04, 4.47, 5.22, 4.45, 4.84, 5.84, 5.88, 5.82, 6.09, 5.59, 6.06, 5.59, 6.74, 5.55. For Type 2 trees, the production is: 4.28, 7.71, 6.48, 7.71, 7.37, 7.20, 7.06, 6.40, 8.93, 5.91, 5.51, 6.36. Is there a statistically significant difference in rubber production between the two types of trees?",
+        "solution": "The following data related the rubber percentage of two types of rubber plants, where the sample have been drawn independently. Test for their mean difference. Type 1: 6.21 5.70 6.04 4.47 5.22 4.45 4.84 5.84 5.88 5.82 6.09 5.59 6.06 5.59 6.74 5.55, Type 2: 4.28 7.71 6.48 7.71 7.37 7.20 7.06 6.40 8.93 5.91 5.51 6.36. Are there difference between these two rubber plants?\nTo test for the mean difference between the two types of rubber plants, we will use the two-sample t-test. First, we need to calculate the mean and standard deviation for each type.\n\nType 1:\nMean = (6.21 + 5.70 + 6.04 + 4.47 + 5.22 + 4.45 + 4.84 + 5.84 + 5.88 + 5.82 + 6.09 + 5.59 + 6.06 + 5.59 + 6.74 + 5.55) / 16 = 5.64\nStandard deviation = 0.74 (approx.)\n\nType 2:\nMean = (4.28 + 7.71 + 6.48 + 7.71 + 7.37 + 7.20 + 7.06 + 6.40 + 8.93 + 5.91 + 5.51 + 6.36) / 12 = 6.69\nStandard deviation = 1.34 (approx.)\n\nNow, we can perform the two-sample t-test using the following formula:\n\nt = (mean1 - mean2) / sqrt((sd1^2 / n1) + (sd2^2 / n2))\nt = (5.64 - 6.69) / sqrt((0.74^2 / 16) + (1.34^2 / 12))\nt = -1.05 / 0.47\nt = -2.23 (approx.)\n\nNow, we need to find the critical t-value for a 95% confidence level and degrees of freedom (df) equal to the smaller of n1 - 1 and n2 - 1, which is min(16 - 1, 12 - 1) = 11. The critical t-value for a two-tailed test with df = 11 and α = 0.05 is approximately ±2.201.\n\nSince the calculated t-value (-2.23) is less than the critical t-value (-2.201), we reject the null hypothesis that there is no difference between the means of the two types of rubber plants.\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['9320', '4138']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Binomial_4.json",
+        "problem": "A teacher wants to create a special team for a project and needs to pick 3 students out of a class of 20. Assuming each student has an equal chance to be selected and the order in which they are chosen doesn't matter, how many different teams can the teacher form?",
+        "solution": "In how many ways can 3 students be selected from a class of 20 to form a study group?\nThis problem can be solved using the combination formula, which is given by:\n\nn C r = n! / (r! * (n-r)!)\n\nwhere n is the total number of students in the class, and r is the number of students we want to select for the study group.\n\nSubstituting n = 20 and r = 3, we get:\n\n20 C 3 = 20! / (3! * (20-3)!)\n\nSimplifying this expression, we get:\n\n20 C 3 = (20 * 19 * 18) / (3 * 2 * 1)\n\n20 C 3 = 1140\n\nTherefore, the answer is 1140.",
+        "gold_theorem_ids": "['10463', '13011', '17901']",
+        "gold_answer": "1140",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/kepler's_law3.json",
+        "problem": "Imagine you're planning a space mission to Mercury and need to calculate how long your spacecraft will take to complete one orbit around the Sun, given Mercury's average distance from the Sun is 58 million kilometers. The mass of the Sun is 1.99x10^30 kg. How many Earth days will your spacecraft take to orbit the Sun once, closely following Mercury's path?",
+        "solution": "The planet Mercury travels around the Sun with a mean orbital radius of 5.8x10^10 m. The mass of the Sun is 1.99x10^30 kg. Use Newton's version of Kepler's third law to determine how long it takes Mercury to orbit the Sun. Give your answer in Earth days.\nNewton's version of Kepler's third law states that the square of the orbital period (T) of a planet is proportional to the cube of the semi-major axis (a) of its orbit, with the constant of proportionality being 4π²/GM, where G is the gravitational constant and M is the mass of the central body (in this case, the Sun).\n\nT² = (4π²/GM) * a³\n\nWe are given the mean orbital radius (a) of Mercury as 5.8x10^10 m and the mass of the Sun (M) as 1.99x10^30 kg. The gravitational constant (G) is 6.674x10^-11 m³/kg/s².\n\nPlugging in the values, we get:\n\nT² = (4π²/(6.674x10^-11 * 1.99x10^30)) * (5.8x10^10)³\n\nSolving for T, we get:\n\nT = √((4π²/(6.674x10^-11 * 1.99x10^30)) * (5.8x10^10)³) ≈ 7.6x10^6 seconds\n\nNow, we need to convert this time to Earth days. There are 86400 seconds in a day, so:\n\nT (in Earth days) = 7.6x10^6 seconds / 86400 seconds/day ≈ 88 days\n\nTherefore, the answer is 88.",
+        "gold_theorem_ids": "['11654', '10831']",
+        "gold_answer": "88.3",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/pigeonhole_1.json",
+        "problem": "Imagine you're organizing a unique social media challenge where participants must submit photos of themselves born in different months. To ensure the challenge's uniqueness, you aim to have participants representing each month of the year. What is the minimum number of participants you need to guarantee that at least two participants were born in the same month?",
+        "solution": "How many people at least shall we include in one group, such that there must exist two different people in this group whose birthdays are in the same month?\nTo guarantee that there are at least two people in the group with the same birth month, we need to consider the worst-case scenario, which is when each person has a birthday in a different month. There are 12 months in a year, so if we have 12 people with birthdays in different months, adding one more person will ensure that at least two people share the same birth month.\n\nTherefore, the answer is 13.",
+        "gold_theorem_ids": "['13467', '18695']",
+        "gold_answer": "13",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Ramsey_3.json",
+        "problem": "In a party, how many guests do you need to have to ensure that either four people all know each other or four people are all complete strangers to one another?",
+        "solution": "What is the minimum number of people needed in a room to guarantee that there are 4 mutual friends or 4 mutual strangers?\nThe minimum number of people needed in a room to guarantee that there are 4 mutual friends or 4 mutual strangers is 18. Therefore, the answer is 18.",
+        "gold_theorem_ids": "['20117', '7627']",
+        "gold_answer": "18",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Catalan_1.json",
+        "problem": "Imagine you're organizing a tournament where 6 games are played, and for each game, there's a winning and a losing team. You want to display the results on a bracket, but you need to ensure that for every game, the number of wins is never less than the number of losses at any point in the sequence of games. How many different ways can you arrange the outcomes of these games on the bracket?",
+        "solution": "How many ways are there to arrange 6 pairs of parentheses such that they are balanced?\nThe number of ways to arrange 6 pairs of parentheses such that they are balanced is given by the sixth Catalan number, which is equal to 132. Therefore, the answer is 132.",
+        "gold_theorem_ids": "['17913']",
+        "gold_answer": "132",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Binomial_3.json",
+        "problem": "In a school's basketball team selection process, there are 12 candidates, out of which 5 are being considered for guard positions and 7 for forward positions. If the team needs to select 3 guards and 2 forwards for the starting lineup, in how many different ways can the selection committee form the starting lineup?",
+        "solution": "A basketball team has 12 players, including 5 guards and 7 forwards. How many different starting lineups can be formed that include 3 guards and 2 forwards?\nTo form a starting lineup with 3 guards and 2 forwards, we need to choose 3 guards from the 5 available guards and 2 forwards from the 7 available forwards. We can use the combination formula to calculate this:\n\nNumber of ways to choose 3 guards from 5 = C(5, 3) = 5! / (3! * (5-3)!) = 10\nNumber of ways to choose 2 forwards from 7 = C(7, 2) = 7! / (2! * (7-2)!) = 21\n\nNow, we multiply the number of ways to choose guards and forwards to get the total number of different starting lineups:\n\nTotal starting lineups = 10 (ways to choose guards) * 21 (ways to choose forwards) = 210\n\nTherefore, the answer is 210.",
+        "gold_theorem_ids": "['13011', '19708', '17198']",
+        "gold_answer": "210",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Multinomial_3.json",
+        "problem": "Imagine you're creating a unique code for a special online discount. The code must be 7 characters long and is made up of the numbers 1, 2 (appearing twice), 3 (appearing three times), and 4. How many different unique codes can you create following these rules?",
+        "solution": "In how many ways can we form a 7-digit number using the digits 1, 2, 2, 3, 3, 3, 4?\nWe have 7 digits to arrange, with the digits 2 and 3 repeating. There are 2 occurrences of the digit 2, and 3 occurrences of the digit 3. We can use the formula for permutations with repetitions:\n\nn! / (n1! * n2! * ... * nk!)\n\nwhere n is the total number of items, and n1, n2, ..., nk are the number of repetitions of each item.\n\nIn this case, n = 7, n1 = 2 (for the digit 2), and n2 = 3 (for the digit 3).\n\nSo, the number of ways to form a 7-digit number is:\n\n7! / (2! * 3!)\n\n7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040\n2! = 2 × 1 = 2\n3! = 3 × 2 × 1 = 6\n\nTherefore, the answer is 5040 / (2 * 6) = 5040 / 12 = 420.",
+        "gold_theorem_ids": "['10463', '10462']",
+        "gold_answer": "420",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/jensen1.json",
+        "problem": "Imagine you're a photographer taking pictures of a landscape that includes a triangle formed by three mountains. You're curious about the brightness of the sunlight hitting the slopes of these mountains at different angles. If you consider the angles at which sunlight hits each of the three peaks as A, B, and C, and you know that the intensity of sunlight can be related to the sine of these angles, is it possible for the sum of the intensities of sunlight on all three peaks to exceed 2.598?",
+        "solution": "For any triangle ABC, we have sin(A) + sin(B) + sin(C) $\\le$ 3\\sqrt(3)/2, is this true or false?\nThis statement is true. \n\nTo prove this, we know that the sum of the angles in a triangle is 180 degrees or π radians. Therefore, A + B + C = π. \n\nUsing the sine addition formula, we have:\n\nsin(A) + sin(B) = 2sin((A + B)/2)cos((A - B)/2)\n\nSince A + B + C = π, we can rewrite the equation as:\n\nsin(A) + sin(B) = 2sin((π - C)/2)cos((A - B)/2)\n\nNow, we know that sin(x) ≤ x for 0 ≤ x ≤ π/2. So, we have:\n\nsin((π - C)/2) ≤ (π - C)/2\n\nAnd since cos(x) ≤ 1 for all x, we have:\n\n2sin((π - C)/2)cos((A - B)/2) ≤ (π - C)\n\nAdding sin(C) to both sides, we get:\n\nsin(A) + sin(B) + sin(C) ≤ (π - C) + sin(C)\n\nSince π - C + sin(C) ≤ 3√3/2, we have:\n\nsin(A) + sin(B) + sin(C) ≤ 3√3/2\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['11619', '11618', '11617']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_panlu/gravitational_force2.json",
+        "problem": "Imagine you're part of a team sending a robot to explore Mars. The robot weighs 3430 Newtons here on Earth. Given that Mars has a radius of 3.40 million meters and a mass of 6.42 times 10 to the power of 23 kilograms, can you calculate how much the gravity on Mars will accelerate the robot? Provide your answer in meters per second squared.",
+        "solution": "A robotic lander with an earth weight of 3430 N is sent to Mars, which has radius $R_M=3.40 \\times 10^6 m$ and mass $m_M=6.42 \\times$ $10^{23} kg$. Find the acceleration there due to gravity. (Unit: $m/s^2$)\nTo find the acceleration due to gravity on Mars, we can use the formula for gravitational force:\n\n$F = G \\frac{m_1 m_2}{r^2}$\n\nwhere $F$ is the gravitational force, $G$ is the gravitational constant ($6.674 \\times 10^{-11} N m^2/kg^2$), $m_1$ and $m_2$ are the masses of the two objects, and $r$ is the distance between their centers.\n\nIn this case, we have the weight of the robotic lander on Earth (3430 N) and we want to find the acceleration due to gravity on Mars. We can first find the mass of the lander using the Earth's gravitational acceleration ($g_E = 9.81 m/s^2$):\n\n$F_E = m_L g_E$\n\nwhere $F_E$ is the weight of the lander on Earth and $m_L$ is the mass of the lander. Solving for $m_L$:\n\n$m_L = \\frac{F_E}{g_E} = \\frac{3430 N}{9.81 m/s^2} = 349.64 kg$\n\nNow we can find the gravitational force between the lander and Mars:\n\n$F_M = G \\frac{m_L m_M}{R_M^2}$\n\nWe want to find the acceleration due to gravity on Mars ($g_M$), so we can use the formula:\n\n$F_M = m_L g_M$\n\nSolving for $g_M$:\n\n$g_M = \\frac{F_M}{m_L} = \\frac{G \\frac{m_L m_M}{R_M^2}}{m_L} = \\frac{G m_M}{R_M^2}$\n\nPlugging in the values for $G$, $m_M$, and $R_M$:\n\n$g_M = \\frac{6.674 \\times 10^{-11} N m^2/kg^2 \\times 6.42 \\times 10^{23} kg}{(3.40 \\times 10^6 m)^2} = 3.71 m/s^2$\n\nTherefore, the answer is 3.71.",
+        "gold_theorem_ids": "['3830', '5249']",
+        "gold_answer": "3.7",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/Liouville’s_theorem2.json",
+        "problem": "Imagine you're a software developer working on a new graphics editing tool. You've created a function that applies a special filter to images. However, no matter what image you input, the intensity of the filter effect seems to remain the same across the entire digital canvas. Assuming the filter's effect intensity is determined by a mathematical function that takes complex numbers as inputs and the effect intensity never drops below a certain level for any part of an image, does this mean your filter function is applying a uniform effect across all images?",
+        "solution": "Let f be an entire function such that |f(z)| $\\geq$ 1 for every z in C. Is f is a constant function?\nBy Liouville's theorem, if f is an entire function and is bounded, then f must be a constant function. However, in this case, |f(z)| $\\geq$ 1 for every z in C, which means f is not bounded. Therefore, we cannot directly apply Liouville's theorem.\n\nHowever, we can consider the function g(z) = 1/f(z). Since f is entire and |f(z)| $\\geq$ 1, g(z) is also entire and |g(z)| $\\leq$ 1 for every z in C. Now, g(z) is a bounded entire function, so by Liouville's theorem, g(z) must be a constant function.\n\nSince g(z) is constant, f(z) = 1/g(z) must also be constant. Therefore, the answer is True.",
+        "gold_theorem_ids": "['14493', '11018', '20530']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_mingyin/Fundamental-Theorem-of-Calculus3.json",
+        "problem": "Imagine you're a treasure hunter, and you're integrating the size of a strange field. To do so, find the value of \\int_a^b \\frac{dx}{\\sqrt{(x-a)(b-x)}}, rounded to the thousands' place.",
+        "solution": "what is the value of \\int_a^b \\frac{dx}{\\sqrt{(x-a)(b-x)}}? Round the answer to the thousands decimal.\nTo solve the integral \\int_a^b \\frac{dx}{\\sqrt{(x-a)(b-x)}}, we can use the substitution method. Let x = a + (b-a)sin^2(t), then dx = 2(b-a)sin(t)cos(t)dt. The integral becomes:\n\n\\int_0^{\\pi/2} \\frac{2(b-a)sin(t)cos(t)dt}{\\sqrt{(a + (b-a)sin^2(t) - a)(b - a - (b-a)sin^2(t))}}\n\nSimplifying the expression, we get:\n\n\\int_0^{\\pi/2} \\frac{2(b-a)sin(t)cos(t)dt}{\\sqrt{(b-a)^2sin^2(t)cos^2(t)}}\n\nThe (b-a) term in the numerator and denominator cancel out, and the square root of sin^2(t)cos^2(t) is sin(t)cos(t). So the integral becomes:\n\n\\int_0^{\\pi/2} 2dt\n\nIntegrating with respect to t, we get:\n\n2t |_0^{\\pi/2}\n\nEvaluating the integral at the limits, we have:\n\n2(\\pi/2) - 2(0) = \\pi\n\nTherefore, the answer is 3.142.",
+        "gold_theorem_ids": "['11986']",
+        "gold_answer": "3.1415926",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_mingyin/convexity1.json",
+        "problem": "Imagine you're designing a park and you have a specific area, S, where you want to plant flowers. You decide that you also want to include a buffer zone around this area where you'll plant a different type of flower. This buffer zone will extend outward from every point of S by a fixed distance, a, creating a new area, S_a. If the original flower area, S, is shaped so that any straight line drawn through S stays within S (meaning it's convex), will the new area with the buffer zone, S_a, also have this same property?",
+        "solution": "For a\\geq 0, we define $S_a={x | dist(x, S) \\leq a}$, where $dist(x,S)=inf_{y\\in S}||x-y||$. Suppose S is convex. Is S_a convex? Return 1 for yes and 0 for no.\nYes, $S_a$ is convex. \n\nProof: Let $x,y\\in S_a$ and $t\\in[0,1]$. Then, by definition of $S_a$, we have $dist(x,S)\\leq a$ and $dist(y,S)\\leq a$. Since $S$ is convex, we have $tx+(1-t)y\\in S$. Therefore, we have:\n\n\\begin{align*}\ndist(tx+(1-t)y,S) &= \\inf_{z\\in S} ||tx+(1-t)y-z|| \\\\\n&\\leq \\inf_{z\\in S} (t||x-z|| + (1-t)||y-z||) \\\\\n&\\leq t\\inf_{z\\in S} ||x-z|| + (1-t)\\inf_{z\\in S} ||y-z|| \\\\\n&\\leq ta + (1-t)a \\\\\n&= a\n\\end{align*}\n\nThus, $tx+(1-t)y\\in S_a$, which shows that $S_a$ is convex. Therefore, the answer is 1.",
+        "gold_theorem_ids": "['23033']",
+        "gold_answer": "1.0",
+        "gold_answer_type": "float"
+    },
+    {
+        "id": "TheoremQA_tonyxia/maxplanar3.json",
+        "problem": "Imagine you're designing a park with 200 different spots (like trees, benches, or fountains) and you want to create pathways connecting these spots. The park is designed so that each pathway section directly connects two spots without crossing any other pathway, and the entire park is divided into distinct areas by these pathways. If you aim to design the park with 400 distinct areas, is this achievable without any pathways crossing each other?",
+        "solution": "True of false: one can draw a simple connected planar graph with 200 vertices and 400 faces\nFalse. \n\nAccording to Euler's formula, for a simple connected planar graph with V vertices, E edges, and F faces, we have V - E + F = 2. \n\nSubstituting V = 200 and F = 400, we get E = 602. \n\nHowever, for a simple connected planar graph, the maximum number of edges is given by E = 3V - 6. Substituting V = 200, we get E = 594, which is less than 602. \n\nTherefore, it is not possible to draw a simple connected planar graph with 200 vertices and 400 faces. \n\nHence, the answer is False.",
+        "gold_theorem_ids": "['11239', '14139']",
+        "gold_answer": "False",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Binomial_6.json",
+        "problem": "Imagine you're at a build-your-own pizza shop where you can choose from 8 unique toppings for your pizza. If you decide to customize your pizza with exactly 3 different toppings, how many unique combinations of these toppings can you create?",
+        "solution": "A pizza parlor offers 8 different toppings. In how many ways can a customer order a pizza with 3 toppings?\nTo find the number of ways a customer can order a pizza with 3 toppings from 8 available toppings, we can use the combination formula: C(n, r) = n! / (r!(n-r)!), where n is the total number of toppings and r is the number of toppings to be chosen.\n\nIn this case, n = 8 and r = 3.\n\nC(8, 3) = 8! / (3!(8-3)!) = 8! / (3!5!) = (8 × 7 × 6) / (3 × 2 × 1) = 56\n\nTherefore, the answer is 56.",
+        "gold_theorem_ids": "['10463', '13011', '17218', '17901']",
+        "gold_answer": "56",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_4_3.json",
+        "problem": "Imagine you have a machine that can transform puzzles. You feed it a 2x2 puzzle, and it changes the puzzle according to a specific rule, producing another 2x2 puzzle. The rule for changing the puzzle is by multiplying it with a fixed 2x2 puzzle that has pieces numbered 1, 2 on the top row and 3, 4 on the bottom row. If you can always get back the original puzzle by feeding the transformed puzzle through a different machine, does this mean the first machine's transformation process can be perfectly reversed?",
+        "solution": "Is the transformation T(M) = [[1, 2], [3, 4]]M from R^{2*2} to R^{2*2} an isomorphism?\nTo determine if the transformation T(M) = [[1, 2], [3, 4]]M is an isomorphism, we need to check if it is both injective (one-to-one) and surjective (onto).\n\nFirst, let's find the determinant of the matrix [[1, 2], [3, 4]]:\n\ndet([[1, 2], [3, 4]]) = (1 * 4) - (2 * 3) = 4 - 6 = -2\n\nSince the determinant is non-zero, the matrix is invertible. This means that the transformation T(M) is both injective and surjective, and therefore, it is an isomorphism.\n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['22723']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_xueguangma/intermediate_value_theorem.json",
+        "problem": "Imagine you're planning a road trip that starts at sea level and ends at the top of a mountain. Your elevation gain is measured by a function that increases as you travel along the path. If your starting point is marked as the beginning of the function and the peak of the mountain as the end, and you know that at some point during your trip you'll cross a bridge that's exactly at sea level but not at the start, can you conclude that there's a point on your path where you're exactly at sea level again, not counting the beginning?",
+        "solution": "Does $p(x) = x^5 + x − 1$ have any real roots?\nWe can use Descartes' Rule of Signs to determine the number of positive and negative roots of the polynomial $p(x)$. The number of positive roots is either equal to the number of sign changes in $p(x)$ or is less than that by an even number. Similarly, the number of negative roots is either equal to the number of sign changes in $p(-x)$ or is less than that by an even number.\n\nFor $p(x) = x^5 + x - 1$, we have one sign change from $x^5$ to $x$, and no further sign changes since $1$ and $-1$ are not roots of the polynomial. Therefore, $p(x)$ has exactly one positive root.\n\nTo determine if $p(x)$ has any real negative roots, we evaluate $p(-x) = -x^5 - x - 1$ and count the number of sign changes. We have one sign change from $-x^5$ to $-x$, and another sign change from $-x$ to $-1$. Therefore, $p(x)$ has exactly one negative root.\n\nSince $p(x)$ has exactly one positive root and exactly one negative root, and the degree of the polynomial is odd, we can conclude that $p(x)$ has at least one real root. Therefore, the answer is True.",
+        "gold_theorem_ids": "['12010', '12011', '12012', '13939', '17066', '18841', '20761']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_tonyxia/maxplanar1.json",
+        "problem": "Imagine you're designing a park with 30 different points of interest (like benches, sculptures, and fountains) and you want to connect them with pathways so that you can walk from any one point to any other without leaving the pathways. However, you want to keep the design simple and open, so you decide that no two pathways will cross each other, and you'll use the minimum number of pathways needed to keep everything connected. What's the maximum number of pathways you can build?",
+        "solution": "What's the maximum number of edges in a simple planar graph with 30 vertices?\nThe maximum number of edges in a simple planar graph with 30 vertices can be found using Euler's formula, which states that for a simple planar graph with V vertices, E edges, and F faces, V - E + F = 2. Since the graph is simple and planar, each face must have at least three edges, and each edge must be incident to at most two faces. Therefore, we can write E ≤ 3F/2. \n\nFor a simple planar graph with 30 vertices, the maximum number of edges can be found by considering the complete graph with 30 vertices, which has 435 edges. However, this graph is not planar. We can then remove edges one by one until the graph becomes planar. The maximum number of edges in a planar graph with 30 vertices is achieved when the graph is a triangulation, i.e., every face is a triangle. In this case, F = 2V - 4, and we have E ≤ 3F/2 = 3V - 6. Therefore, the maximum number of edges in a simple planar graph with 30 vertices is 84.\n\nTherefore, the answer is 84.",
+        "gold_theorem_ids": "['11239', '14139']",
+        "gold_answer": "84",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Multinomial_6.json",
+        "problem": "Imagine you're organizing a display case for a toy store, and you have 4 unique superhero figurines, 3 unique dinosaur figurines, and 2 unique robot figurines. You want to select 4 figurines for the display, but you've promised a big superhero fan that at least 2 of the figurines will be superheroes. In how many different ways can you arrange the display under these conditions?",
+        "solution": "A box contains 4 red, 3 green, and 2 blue balls. Balls are distinct even with the same color. In how many ways can we choose 4 balls, if at least 2 are red?\nTo solve this problem, we can break it down into three cases:\n\nCase 1: We choose exactly 2 red balls and 2 non-red balls.\nThere are 4 red balls, so we can choose 2 of them in 4C2 ways. There are 5 non-red balls (3 green and 2 blue), so we can choose 2 of them in 5C2 ways. Therefore, there are 4C2 * 5C2 ways for this case.\n\nCase 2: We choose exactly 3 red balls and 1 non-red ball.\nThere are 4 red balls, so we can choose 3 of them in 4C3 ways. There are 5 non-red balls, so we can choose 1 of them in 5C1 ways. Therefore, there are 4C3 * 5C1 ways for this case.\n\nCase 3: We choose all 4 red balls.\nThere is only 1 way to choose all 4 red balls.\n\nNow, we add up the number of ways for each case:\n4C2 * 5C2 + 4C3 * 5C1 + 1\n\nCalculating the combinations:\n(4!/(2!2!)) * (5!/(2!3!)) + (4!/(3!1!)) * (5!/(1!4!)) + 1\n= (6) * (10) + (4) * (5) + 1\n= 60 + 20 + 1\n= 81\n\nTherefore, the answer is 81.",
+        "gold_theorem_ids": "['10462']",
+        "gold_answer": "81",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_algebra_7_2.json",
+        "problem": "Imagine you have a magical box that can transform any set of objects inside it. Every time you put a specific type of object in the box and close the lid, the box leaves the object unchanged. Is it possible to find an eigenbasis for this magical box that works like a regular, unchanged box?",
+        "solution": "Is there an eigenbasis for the identity matrix I_n?\nYes, there is an eigenbasis for the identity matrix I_n. \n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['2723', '2724']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_elainewan/math_calculus_2_7.json",
+        "problem": "Imagine you're observing the brightness of a light bulb as it's being adjusted. As the control knob is turned to a specific setting, the absolute change in brightness approaches zero. What does the change in brightness become as the knob reaches that specific setting?",
+        "solution": "\\lim_{x \\to c} |f(x)| = 0. What is \\lim_{x \\to c} f(x)?\nSince the limit of the absolute value of f(x) as x approaches c is 0, this means that f(x) must be approaching 0 as well. Therefore, the answer is 0.",
+        "gold_theorem_ids": "['10521', '21758', '21762']",
+        "gold_answer": "0",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_xinyi/dag_1.json",
+        "problem": "In a city's road map, each intersection is connected by one-way streets. If it's possible to assign a unique number to each intersection in such a way that all streets lead from an intersection with a lower number to an intersection with a higher number, does this mean there are no routes that allow you to start from one intersection and return to it without retracing your steps? True or false?",
+        "solution": "If there exists an ordered numbering of the nodes such that for each node there are no links going to a lower-numbered node, then there are no directed cycles in a directed graph. True or false?\nTrue. \n\nIf there exists an ordered numbering of the nodes such that for each node there are no links going to a lower-numbered node, then it means that the graph can be topologically sorted. A topological sort of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering. Therefore, if a graph can be topologically sorted, it must be a DAG, which means there are no directed cycles in the graph. \n\nTherefore, the answer is True.",
+        "gold_theorem_ids": "['3778', '13468', '23699']",
+        "gold_answer": "True",
+        "gold_answer_type": "bool"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Ramsey_5.json",
+        "problem": "Imagine you're organizing a tournament with teams from different cities, and each match can end in one of two outcomes: a win for the home team (marked with a red flag) or a win for the visiting team (marked with a blue flag). What is the minimum number of teams you need to invite to ensure that you will have either 4 teams where each has won against all the other three teams at least once (all matches among them marked with red flags) or 5 teams where each has lost to all the other four teams at least once (all matches among them marked with blue flags)?",
+        "solution": "Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a 4-clique in red or a 5-clique in blue?\nThe answer is (c) 25. \n\nThis problem is related to Ramsey theory, which studies the conditions under which order must appear in a structure. In this case, we are interested in finding the smallest value of n such that any coloring of the edges of a complete graph with n vertices in 2 colors (red and blue) must contain either a red 4-clique or a blue 5-clique.\n\nThe answer can be found using the Ramsey number R(4,5), which is the smallest value of n such that any coloring of the edges of a complete graph with n vertices in 2 colors (red and blue) must contain either a red 4-clique or a blue 5-clique. It is known that R(4,5) = 25.\n\nTherefore, the answer is (c) 25.",
+        "gold_theorem_ids": "['20117', '7627']",
+        "gold_answer": "25",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Binomial_2.json",
+        "problem": "Imagine you have a fruit stand and you're creating a new fruit mix from bananas only. You decide to label each mix with a unique 6-character code, using the letters from the word 'BANANA'. Considering the repetition of letters, how many unique 6-character codes can you create for your fruit mixes?",
+        "solution": "How many different 6-letter arrangements can be made from the letters in the word BANANA?\nTo find the number of different 6-letter arrangements that can be made from the letters in the word BANANA, we need to consider the number of repetitions of each letter. BANANA has 3 As, 2 Ns, and 1 B.\n\nWe can use the formula for permutations with repetitions: n! / (n1! * n2! * ... * nk!), where n is the total number of letters, and n1, n2, ..., nk are the number of repetitions of each letter.\n\nIn this case, n = 6 (total number of letters), n1 = 3 (number of As), n2 = 2 (number of Ns), and n3 = 1 (number of Bs).\n\nSo, the number of different 6-letter arrangements is:\n\n6! / (3! * 2! * 1!) = 720 / (6 * 2 * 1) = 720 / 12 = 60\n\nTherefore, the answer is 60.",
+        "gold_theorem_ids": "['10463']",
+        "gold_answer": "60",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_jianyu_xu/Ramsey_6.json",
+        "problem": "Imagine you're organizing a party and you have a game that involves connecting every pair of guests with either a red or a blue string. Each guest is connected to every other guest. You want to find out the minimum number of guests needed so that you're guaranteed to have either a group of three guests all connected by red strings or a group of six guests all connected by blue strings. What is the smallest number of guests that will ensure this happens?",
+        "solution": "Coloring the edges of a complete graph with n vertices in 2 colors (red and blue), what is the smallest n that guarantees there is either a triangle in red or a 6-clique in blue?\nThe answer is (c) 18. \n\nThis problem is related to Ramsey theory, which studies the conditions under which order must appear in a structure. In this case, we are interested in finding the smallest value of n such that any coloring of the edges of a complete graph with n vertices in 2 colors (red and blue) must contain either a red triangle or a blue 6-clique.\n\nThe Ramsey number R(3,6) is the smallest value of n such that any coloring of the edges of a complete graph with n vertices in 2 colors (red and blue) must contain either a red triangle or a blue 6-clique. It is known that R(3,6) = 18.\n\nTherefore, the answer is (c) 18.",
+        "gold_theorem_ids": "['20117', '7627']",
+        "gold_answer": "18",
+        "gold_answer_type": "integer"
+    },
+    {
+        "id": "TheoremQA_wenhuchen/series_convergen2.json",
+        "problem": "Imagine you're adding a sequence of fractions where each fraction represents a piece of a digital image that becomes clearer as more pieces are added. Starting with the first piece, each subsequent piece is slightly smaller than the one before it, following the pattern where the numerator is one less than the iteration number, and the denominator is the iteration number cubed plus one, starting with iteration number 0. (for example, the first fraction is 0/2, the second is 1/9, and so on). Will there come a point when adding more pieces doesn't significantly change the image, or can you keep adding pieces forever and continue to see a change?",
+        "solution": "Does the following series $\\sum_{i=0}^{\\infty} \\frac{n-1}{n^3+1}$ converge?\nTo determine if the series converges, we can use the comparison test. Let's compare the given series with another series whose convergence is known. Consider the series $\\sum_{i=0}^{\\infty} \\frac{1}{n^2}$, which is a convergent p-series with p = 2 > 1.\n\nNow, let's compare the terms of the two series:\n\n$\\frac{n-1}{n^3+1} \\leq \\frac{1}{n^2}$ for all n ≥ 1.\n\nWe can prove this inequality by cross-multiplying and simplifying:\n\n$(n-1)(n^2) \\leq (n^3+1)$\n\n$n^3 - n^2 \\leq n^3 + 1$\n\n$-n^2 \\leq 1$\n\nSince the inequality holds for all n ≥ 1, we can conclude that the given series converges by the comparison test. Therefore, the answer is True.",
+        "gold_theorem_ids": "['15648', '11276', '8388', '8392']",
+        "gold_answer": "1.0",
+        "gold_answer_type": "float"
+    }
+]

@@ -1,0 +1,19 @@
+{
+    "prompt_template": "You are given a mathematical question with an incomplete step by step Response. What are the mathematical concepts, theorems, formulas that would be useful for solving this question. Start your generation after *Query for Retrieval*. Please provide detailed explanations of each mathematical concept with rigor, when required. Try to use general formulas, mathematical notations and why the concepts are useful for the given question (Do not output the entire solution steps). \n\n{examples}\n\n### Question:\n{question}\n\n### Response:\nLet's think step by step.\n",
+    "stop_tokens": [
+        "</s>",
+        "USER:",
+        "USER",
+        "ASSISTANT:",
+        "ASSISTANT",
+        "Question:",
+        "Question",
+        "Response:",
+        "Response",
+        "#",
+        "# ",
+        "###",
+        "### "
+    ],
+    "answer_marker": "answer is"
+}

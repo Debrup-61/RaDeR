@@ -1,0 +1,8 @@
+{
+    "prompt_template": "You are given a question as `Question` and a theorem which was retrieved as `Retrieved Theorem`. You are also provided with the remaining solution steps after retrieving the theorem, denoted as `Remaining solution`. Your job is to determine if the theorem was directly used at some point in the remaining solution. If yes, then output `Label` as Yes, else output `Label` as No. Also provide an explanation for your Label in `Explanation`. Here are some examples. \n\n{examples}\n\nQuestion: {question}",
+    "stop_tokens": [
+        "Question:",
+        "Question"
+    ],
+    "answer_marker": "boxed"
+}

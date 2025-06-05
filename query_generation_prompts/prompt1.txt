@@ -1,0 +1,53 @@
+Given the relevant theorem, the question and the partial solution, generate preconditions of the theorem and why they are satisfied in the question. Using the preconditions, generate a general query that captures the key idea or the core mathematical information need in the intermediate solution of the question, for the task of retrieval, that would be suitable for retrieving the above mathematical theorem. Some points to consider: (1) Do not mention the name of the above theorem in the query, (2) Do not have lexical overlap or direct semantic overlap with the above theorem in the query, (3) Consider the state of the Partial solution for formulating the query, (4) Use general mathematical variables and notations in the query when required.
+
+**Question:** Mary is planning to bake exactly 10 cookies, and each cookie may be one of three different shapes -- triangle, circle, and square. Mary wants the cookie shapes to be a diverse as possible. What is the smallest possible count for the most common shape across the ten cookies?
+Partial solution: To ensure the cookie shapes are as diverse as possible, we need to distribute the 10 cookies among the three shapes (triangle, circle, and square) as evenly as we can. To distribute the 10 cookies as evenly as possible among the three shapes, we start by dividing 10 by 3.
+Theorem 1: Pigeonhole Principle
+Theorem Statement: If \\( n \\) items are put into \\( m \\) containers, with \\( n > m \\), then at least one container must contain more than one item.
+Preconditions in Theorem:
+(1) There are more items than containers.
+(2) The items are distributed into containers.
+Why Preconditions are Satisfied in the Question:
+(1) Mary has 10 cookies (items) and 3 shapes (containers).
+(2) The cookies are being distributed among the shapes.
+Query: How can we distribute n items into m categories such that the difference between the counts of the most and least common categories is minimized, given that n is greater than m? 
+
+**Question**: Imagine you're a landscape architect planning a new park and need to calculate the amount of soil needed to create a specific land feature. The feature's cross-section can be described by the equation y=2^{x}, and you're looking at the section from x=-1 to x=3. To estimate the volume of soil needed, you decide to break this section into 4 equal parts and use a method that approximates the area by connecting the dots with straight lines to form trapezoids. How much area would you estimate is under the curve for this section?
+Partial solution: Identify the range and the number of intervals. The range is from \(x = -1\) to \(x = 3\). We are dividing this range into 4 equal parts, so each interval will be \(\Delta x = \\frac{3 - (-1)}{4} = 1\). Calculate the y-values for each x in the interval. For \(x = -1\), \(y = 2^{-1} = 0.5\). For \(x = 0\), \(y = 2^{0} = 1\). For \(x = 1\), \(y = 2^{1} = 2\). For \(x = 2\), \(y = 2^{2} = 4\). For \(x = 3\), \(y = 2^{3} = 8\).
+Theorem 1: Trapezoidal Rule for Approximating Area
+Theorem Statement: The area under a curve \(y = f(x)\) from \(a\) to \(b\) can be approximated by dividing the interval \([a, b]\) into \(n\) equal subintervals and using the trapezoidal rule:
+\[ \\text{Area} \\approx \\frac{\Delta x}{2} \left[ f(x_0) + 2f(x_1) + 2f(x_2) + \cdots + 2f(x_{n-1}) + f(x_n) \\right] \] where \(\Delta x = \\frac{b - a}{n}\) and \(x_i = a + i \Delta x\).
+Preconditions:
+(1) The function \(f(x)\) is continuous on \([a, b]\).
+(2) The interval \([a, b]\) is divided into \(n\) equal subintervals.
+(3) The number of subintervals \(n\) must be a positive integer.
+Why Precondition is Satisfied in the Question:
+(1) The function \(y = 2^x\) is continuous over the interval \([-1, 3]\).
+(2) The interval \([-1, 3]\) is divided into 4 equal subintervals.
+(3) The number of subintervals \(n = 4\) is a positive integer.
+Query: How can we approximate the area under a curve between two points by dividing the region into equal segments and using a method that connects these points with straight lines to form trapezoids?
+
+**Question**: Imagine you're organizing a small project team at work, and you need to pick a mix of team members from two departments. You have 6 marketing specialists and 8 product designers. If the team needs to consist of 2 marketing specialists and 3 product designers, how many different teams can you form?
+Partial Solution: Calculate the number of ways to choose 2 marketing specialists out of 6. This is a combination problem, where the order does not matter. The formula for combinations is \( \\binom{n}{r} = \\frac{n!}{r!(n-r)!} \).For marketing specialists:[ \\binom{6}{2} = \\frac{6!}{2!(6-2)!} = \\frac{6!}{2!4!} = \\frac{6 \\times 5}{2 \\times 1} = 15 \]. Calculate the number of ways to choose 3 product designers out of 8. Again, this is a combination problem.For product designers: \[ \\binom{8}{3} = \\frac{8!}{3!(8-3)!} = \\frac{8!}{3!5!} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56 \]
+Theorem 1: Combinations (Binomial Coefficient)
+Theorem Statement: The number of ways to choose \( k \) items from \( n \) items without regard to the order is given by the binomial coefficient, denoted as \( C(n, k) \) or \( \\binom{n}{k} \):
+\[ \\binom{n}{k} = \\frac{n!}{k!(n-k)!} \]
+Preconditions:
+(1) The items are chosen without regard to order.
+(2) The items are selected from a larger set.
+Why Precondition is Satisfied in the Question:
+(1) The team members are chosen without considering the order in which they are selected.
+(2) The selection is made from the combined pool of marketing specialists and product designers.
+Query: How many different ways can you select \\( k \\) items from a larger set of \\( n \\) items when the order of selection does not matter?
+
+**Question**: A landscaper is planting a trail of flowers through a garden with grass patches in a tile pattern. The trail goes from the house on the west side (x=-10) to the gate on the east side (x=10). The position of each flower falls on the graph of a quadratic equation f(x) = a + bx + cx^2, and the y-positions of the flowers at x=1, x=2, and x=3 are -1, 3, and 13, respectively. The landscaper forgot the y-position of the flower at x-position -1, but remembers the quadratic equation all flower positions satisfies. Can you figure out the y-position of that flower by using the equation?
+Partial Solution: To find the y-position of the flower at \( x = -1 \), we need to determine the quadratic equation \( f(x) = a + bx + cx^2 \) that fits the given points \( (1, -1) \), \( (2, 3) \), and \( (3, 13) \). We have the points \( (1, -1) \), \( (2, 3) \), and \( (3, 13) \) that the quadratic equation \( f(x) = a + bx + cx^2 \) must satisfy. Substituting these points into the equation, we get a system of equations. 
+Theorem 1: System of Linear Equations
+Theorem Statement: Given a system of linear equations in the form \(a_1x + b_1y = c_1\), \(a_2x + b_2y = c_2\), and \(a_3x + b_3y = c_3\), the system has a unique solution if the determinant of the coefficient matrix is non-zero.
+Preconditions:
+(1) The system of equations must have the same number of equations as variables.
+(2) The determinant of the coefficient matrix must be non-zero for a unique solution.
+Why Preconditions are Satisfied in the Question:
+(1) We have three points \((1, -1)\), \((2, 3)\), and \((3, 13)\) and three unknowns \(a\), \(b\), and \(c\), so the system is consistent with the number of equations and variables.
+(2) The determinant of the coefficient matrix formed by the system of equations is non-zero, ensuring a unique solution.
+Query: How can you determine the coefficients of a quadratic equation \\( f(x) = a + bx + cx^2 \\) using three given points, and then use these coefficients to find the value of \\( f(x) \\) at another specific point?

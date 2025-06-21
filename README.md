@@ -1,6 +1,6 @@
 # RaDeR: Reasoning-aware Dense Retrieval Models
 <p align="center">
-  <img width="75%" src="images/RaDeR_visualization.png"><br>
+  <img width="90%" src="images/RaDeR_visualization.png"><br>
   <em>Figure 1: a) RaDeR performance overview, b) Data efficiency</em>
 </p>
 

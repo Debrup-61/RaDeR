@@ -3,6 +3,7 @@
   <img width="75%" src="images/RaDeR_visualization.png"><br>
   <em>Figure 1: a) RaDeR performance overview, b) Data efficiency</em>
 </p>
+
 ## Table of Contents 
 1. [Overview](#overview)  
 2. [Installation](#installation)  

@@ -1,5 +1,8 @@
 # RaDeR: Reasoning-aware Dense Retrieval Models
-
+<p align="center">
+  <img width="75%" alt="pdf" src="images/RaDeR_RaDeR_visualization.png"><br>
+  <em>Figure 1: a) RaDeR performance overview, b) Data efficiency</em>
+</p>
 ## Table of Contents 
 1. [Overview](#overview)  
 2. [Installation](#installation)  
@@ -20,7 +23,7 @@ We propose RaDeR, a set of reasoning-based dense retrieval models trained with d
 
 <p align="center">
   <img width="75%" alt="pdf" src="images/RaDeR_datageneration.png"><br>
-  <em>Figure 1: Data generation pipeline for RaDeR.The OST action stands for one step thought generation, and CRS stands for complete remaining solution steps action.</em>
+  <em>Figure 2: Data generation pipeline for RaDeR.The OST action stands for one step thought generation, and CRS stands for complete remaining solution steps action.</em>
 </p>
 
 ## Installation

@@ -170,7 +170,7 @@ Example command for Retriever training:
 ```bash
 deepspeed --include localhost:0,1 --master_port 60000 --module tevatron.retriever.driver.train \
   --deepspeed deepspeed/ds_zero3_config.json \
-  --output_dir retriever-mistral \
+  --output_dir retriever-RaDeR \
   --model_name_or_path Qwen/Qwen2.5-7B-Instruct \
   --lora \
   --lora_target_modules q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj \

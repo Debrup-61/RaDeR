@@ -16,7 +16,7 @@
    - [Generating LLM queries](#generating-llm-queries) 
    - [Generating lexical queries](#generating-lexical-queries) 
 5. [Training models](#training-models)  
-6. 📈[Evaluating models](#📈evaluating-models)  
+6. 📈 [Evaluating models](#evaluating-models-📈)  
 7. [Evaluation results](#evaluation-results)  
 
 ## Overview 
@@ -195,7 +195,7 @@ deepspeed --include localhost:0,1 --master_port 60000 --module tevatron.retrieve
   --gradient_accumulation_steps 16
 ```
 
-## 📈Evaluating models
+## Evaluating models 📈
 (1) For evaluation of retrievers on the **BRIGHT** dataset run the ```retriever_evaluation.sh``` with the correct arguments. Example command shown in the file.
 
 (2) For evaluation of rerankers on the **BRIGHT** dataset run the ```reranker_evaluation.sh``` with the correct arguments. Example command shown in the file.

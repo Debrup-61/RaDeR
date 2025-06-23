@@ -5,21 +5,21 @@
 </p>
 
 ## Table of Contents 
-1. [Overview](#overview)  
-2. [Installation](#installation)  
+1. 💡 [Overview](#-overview)  
+2. ⬇️ [Installation](#-installation)  
    - [Make python environment](#make-python-environment)  
    - [Set the environment variables](#set-the-environment-variables)  
    - [Precompute document embeddings](#precompute-document-embeddings) 
-3. [Retrieval data generation](#retrieval-data-generation)  
+3. 📋 [Retrieval data generation](#-retrieval-data-generation)  
    - [Generate reasoning paths from MCTS](#generate-reasoning-paths-from-MCTS)  
-4. [Generating queries](#generating-queries) 
+4. ❓ [Generating queries](#-generating-queries) 
    - [Generating LLM queries](#generating-llm-queries) 
    - [Generating lexical queries](#generating-lexical-queries) 
-5. [Training models](#training-models)  
+5. 🏃 [Training models](#-training-models)  
 6. 📈 [Evaluating models](#-evaluating-models)  
-7. [Evaluation results](#evaluation-results)  
+7. 📊 [Evaluation results](#-evaluation-results)  
 
-## Overview 
+## 💡 Overview 
 We propose RaDeR, a set of reasoning-based dense retrieval models trained with data derived from mathematical problem solving using large language models (LLMs). Our method leverages retrieval-augmented reasoning trajectories of an LLM and self-reflective relevance evaluation, enabling the creation of both diverse and hard-negative samples for reasoning-intensive relevance. RaDeR retrievers, trained for mathematical reasoning, effectively generalize to diverse reasoning tasks in the BRIGHT and RAR-b benchmarks, consistently outperforming strong baselines in overall performance.
 
 <p align="center">
@@ -27,7 +27,7 @@ We propose RaDeR, a set of reasoning-based dense retrieval models trained with d
   <em>Figure 2: Data generation pipeline for RaDeR.The OST action stands for one step thought generation, and CRS stands for complete remaining solution steps action.</em>
 </p>
 
-## Installation
+## ⬇️ Installation
 
 ### Make python environment
 
@@ -79,7 +79,7 @@ REPLLAMA_THEOREMT_DOC_EMB_CACHE="BRIGHT_cache/doc_emb/RepLLama/0.npy"    # Path 
 bash get_doc_embeddings.sh RaDeR    
 ```
 
-## Retrieval data generation
+## 📋 Retrieval data generation
 We generate training data using a retrieval-augmented Monte Carlo Tree Search (MCTS) approach to solve mathematical reasoning problems using LLMs. Our motivation is twofold. First, solving mathematical problems often requires applying theorems to subproblems, which enables the integration of retrievers. Theorems found to be relevant to subproblems are also relevant to the original question due to the reasoning steps that connect them. Second, verifying LLM answers against gold answers provides a proxy for evaluating the utility of retrieved theorems in solving subproblems.
 
 ### Generate reasoning paths from MCTS
@@ -131,7 +131,7 @@ python run_src/run_parallel_workers.py \
 > We use the [*Rstar*](https://github.com/zhentingqi/rStar): Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solvers github repository as the foundation for our MCTS data generation pipeline. 
 
 
-## Generating queries 
+## ❓ Generating queries 
 
 ### Generating LLM queries 
 We prompt an LLM to generate query based on the math question M, the reasoning steps up to the query node (excluding the query),and the retrieved theorem. Assuming `outputs_MCTS/run_outputs/MATH/TEST_RUN/answer_sheets` is the path to your MCTS answer directory, use the following command:
@@ -146,7 +146,7 @@ bash generate_lexicalqueries.sh
 > [!NOTE]
 > First, you need to make a csv file where there is a column called ```input``` containing the theorem from MCTS. ```generate_LLMqueries.py``` shows how to extract the theorems from MCTS.
 
-## Training models
+## 🏃 Training models
 For training the our RaDeR retrievers and rerankers, we use the [Tevatron](https://github.com/texttron/tevatron) github, which is a software for training billion-scale LLM neural retriever on GPUs and TPUs. We use its functionality for Parameter efficient tuning with LoRA. It is integrated with vLLM, DeepSpeed, FlashAttention, gradient accumulation, and other efficient training and inference techniques.
 
 **Installation**
@@ -201,7 +201,7 @@ deepspeed --include localhost:0,1 --master_port 60000 --module tevatron.retrieve
 (2) For evaluation of rerankers on the **BRIGHT** dataset run the ```reranker_evaluation.sh``` with the correct arguments. Example command shown in the file.
 
 
-## Evaluation results
+## 📊 Evaluation results
 
 ### Retrieval results of RaDeR models on BRIGHT 
 <p align="center">
